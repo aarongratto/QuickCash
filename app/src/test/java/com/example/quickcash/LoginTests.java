@@ -1,7 +1,9 @@
 package com.example.quickcash;
 
+import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -87,5 +89,23 @@ public class LoginTests {
         assertFalse("Not logged in", e2.isLoggedIn());
         assertTrue("Already logged in", e3.isLoggedIn());
         assertFalse("Not logged in", e4.isLoggedIn());
+    }
+
+    //tests that user has made too many login attempts (i.e., 3)
+    @Test
+    public void tooManyLoginsTest(){
+        int loginAttempts = 0;
+
+        Employer e1 = new Employer();
+
+        while(loginAttempts < 3){
+            e1.login("", ""); //pass bad login credentials
+            if (e1.isLoggedIn()){
+                break;
+            }
+            loginAttempts++;
+        }
+
+        assertEquals("Max login attempts reached", 3, loginAttempts);
     }
 }
