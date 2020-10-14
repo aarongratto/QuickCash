@@ -14,9 +14,9 @@ public class LoginTests {
         EmailValidator e2 = new EmailValidator("JohnDoe");
         EmailValidator e3 = new EmailValidator("JohnDoe@gmail.com");
 
-        assertFalse(e1.validEmail());
-        assertFalse(e2.validEmail());
-        assertTrue(e3.validEmail());
+        assertFalse("Invalid Email. Reason: blank email", e1.validEmail());
+        assertFalse("Invalid Email. Reason: not an email address", e2.validEmail());
+        assertTrue("Valid Email.", e3.validEmail());
     }
 
     //tests that username is in valid form
@@ -26,9 +26,9 @@ public class LoginTests {
         UsernameValidator u2 = new UsernameValidator("_@$!");
         UsernameValidator u3 = new UsernameValidator("JaneDoe123");
 
-        assertFalse(u1.validUser());
-        assertFalse(u2.validUser());
-        assertTrue(u3.validUser());
+        assertFalse("Invalid Username. Reason: blank username", u1.validUser());
+        assertFalse("Invalid Username. Reason: cannot contain special characters", u2.validUser());
+        assertTrue("Valid Username", u3.validUser());
     }
 
     //tests that password is of appropriate length
@@ -38,9 +38,9 @@ public class LoginTests {
         PasswordValidator v2 = new PasswordValidator("Test");
         PasswordValidator v3 = new PasswordValidator("CSCI3130");
 
-        assertTrue(v1.isLongEnough());
-        assertFalse(v2.isLongEnough());
-        assertTrue(v3.isLongEnough());
+        assertTrue("Password is long enough", v1.isLongEnough());
+        assertFalse("Password is not long enough", v2.isLongEnough());
+        assertTrue("Password is not long enough", v3.isLongEnough());
     }
 
 
@@ -52,10 +52,10 @@ public class LoginTests {
         PasswordValidator v3 = new PasswordValidator("TEST");
         PasswordValidator v4 = new PasswordValidator("");
 
-        assertFalse(v1.caseCheck());
-        assertTrue(v2.caseCheck());
-        assertFalse(v3.caseCheck());
-        assertFalse(v4.caseCheck());
+        assertFalse("Password missing Uppercase", v1.caseCheck());
+        assertTrue("Password passes caseCheck", v2.caseCheck());
+        assertFalse("Password missing Lowercase", v3.caseCheck());
+        assertFalse("Password cannot be blank", v4.caseCheck());
     }
 
     //tests that password contains a special character
@@ -66,10 +66,10 @@ public class LoginTests {
         PasswordValidator v3 = new PasswordValidator("TEST#");
         PasswordValidator v4 = new PasswordValidator("@$!_");
 
-        assertTrue(v1.specialCheck());
-        assertTrue(v2.specialCheck());
-        assertFalse(v3.specialCheck());
-        assertTrue(v4.specialCheck());
+        assertTrue("Password passes specialCheck", v1.specialCheck());
+        assertTrue("Password passes specialCheck", v2.specialCheck());
+        assertFalse("Not a valid special character", v3.specialCheck());
+        assertTrue("Password passes specialCheck", v4.specialCheck());
     }
 
     //tests that user is already logged in
@@ -83,9 +83,9 @@ public class LoginTests {
         e1.login("Aaron", "pass");
         e3.login("Patrick", "password");
 
-        assertTrue(e1.isLoggedIn());
-        assertFalse(e2.isLoggedIn());
-        assertTrue(e3.isLoggedIn());
-        assertFalse(e4.isLoggedIn());
+        assertTrue("Already logged in", e1.isLoggedIn());
+        assertFalse("Not logged in", e2.isLoggedIn());
+        assertTrue("Already logged in", e3.isLoggedIn());
+        assertFalse("Not logged in", e4.isLoggedIn());
     }
 }
