@@ -1,11 +1,15 @@
 package com.example.quickcash;
 
-public class Employer {
-    private String username;
-    private String userType = "employer";
+/**
+ * Author: Patrick Strongman
+ * Date: 2020-10-14
+ *
+ * Employer class representing an employer that can log into the app
+ */
 
-    private boolean loggedIn = false;
+public class Employer extends User {
 
+    @Override
     public void login(String username, String password) {
         // Fake the login until database is implemented
         if (username.equals("Aaron") && password.equals("pass")) {
@@ -14,15 +18,8 @@ public class Employer {
         }
     }
 
-    public boolean isLoggedIn() {
-        return loggedIn;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getUserType() {
-        return userType;
+    @Override
+    protected String setUserType() {
+        return "employer";
     }
 }

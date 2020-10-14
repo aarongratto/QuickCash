@@ -7,12 +7,9 @@ package com.example.quickcash;
  * Employee class representing an employee that can log into the app
  */
 
-public class Employee {
-    private String username;
-    private String userType = "employee";
+public class Employee extends User {
 
-    private boolean loggedIn = false;
-
+    @Override
     public void login(String username, String password) {
         // Fake the login until database is implemented
         if (username.equals("Patrick") && password.equals("password")) {
@@ -21,15 +18,8 @@ public class Employee {
         }
     }
 
-    public boolean isLoggedIn() {
-        return loggedIn;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getUserType() {
-        return userType;
+    @Override
+    protected String setUserType() {
+        return "employee";
     }
 }
