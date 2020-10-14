@@ -19,12 +19,12 @@ public class EmployeeTest {
     @Test
     public void testType() {
         assertEquals("employee", employee.getUserType(), "Wrong user type returned. " +
-                "Expected: employee, returned: " + employee.getUsetType());
+                "Expected: employee, returned: " + employee.getUserType());
     }
 
     @Test
     public void testUsername() {
-        assertEquals(employeeUsername, employee.getUserName(), "Wrong username returned. " +
+        assertEquals(employeeUsername, employee.getUsername(), "Wrong username returned. " +
                 "Expected: " + employeeUsername + ", returned: " + employee.getUsername());
     }
 
