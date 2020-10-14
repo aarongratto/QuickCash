@@ -18,4 +18,16 @@ public class LoginTests {
         assertFalse(e2.validEmail());
         assertTrue(e3.validEmail());
     }
+
+    //tests that username is in valid form
+    @Test
+    public void validUsernameTest(){
+        UsernameValidator u1 = new UsernameValidator("");
+        UsernameValidator u2 = new UsernameValidator("_@$!");
+        UsernameValidator u3 = new UsernameValidator("JaneDoe123");
+
+        assertFalse(u1.validUser());
+        assertFalse(u2.validUser());
+        assertTrue(u3.validUser());
+    }
 }
