@@ -30,4 +30,45 @@ public class LoginTests {
         assertFalse(u2.validUser());
         assertTrue(u3.validUser());
     }
+
+    //tests that password is of appropriate length
+    @Test
+    public void passwordLongEnoughTest() {
+        PasswordValidator v1 = new PasswordValidator("Password");
+        PasswordValidator v2 = new PasswordValidator("Test");
+        PasswordValidator v3 = new PasswordValidator("CSCI3130");
+
+        assertTrue(v1.isLongEnough());
+        assertFalse(v2.isLongEnough());
+        assertTrue(v3.isLongEnough());
+    }
+
+
+    //tests that password has both upper and lower case characters
+    @Test
+    public void caseCheckTest(){
+        PasswordValidator v1 = new PasswordValidator("test");
+        PasswordValidator v2 = new PasswordValidator("Test");
+        PasswordValidator v3 = new PasswordValidator("TEST");
+        PasswordValidator v4 = new PasswordValidator("");
+
+        assertFalse(v1.caseCheck());
+        assertTrue(v2.caseCheck());
+        assertFalse(v3.caseCheck());
+        assertFalse(v4.caseCheck());
+    }
+
+    //tests that password contains a special character
+    @Test
+    public void specialCheckTest(){
+        PasswordValidator v1 = new PasswordValidator("test");
+        PasswordValidator v2 = new PasswordValidator("Test!");
+        PasswordValidator v3 = new PasswordValidator("TEST#");
+        PasswordValidator v4 = new PasswordValidator("@$!_");
+
+        assertTrue(v1.specialCheck());
+        assertTrue(v2.specialCheck());
+        assertFalse(v3.specialCheck());
+        assertTrue(v4.specialCheck());
+    }
 }
