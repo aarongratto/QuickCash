@@ -18,14 +18,14 @@ public class EmployerTest {
 
     @Test
     public void testType() {
-        assertEquals("employee", employer.getUserType(), "Wrong user type returned. " +
-                "Expected: employee, returned: " + employer.getUserType());
+        assertEquals("Wrong user type returned. " +
+                "Expected: employee, returned: " + employer.getUserType(), "employer", employer.getUserType());
     }
 
     @Test
     public void testUsername() {
-        assertEquals(employerUsername, employer.getUsername(), "Wrong username returned. " +
-                "Expected: " + employerUsername + ", returned: " + employer.getUsername());
+        assertEquals("Wrong username returned. " +
+                "Expected: " + employerUsername + ", returned: " + employer.getUsername(), employerUsername, employer.getUsername());
     }
 
     @Test
@@ -37,7 +37,7 @@ public class EmployerTest {
     public void testWrongInfo() {
         Employer employerTest = new Employer();
         employerTest.login("Partick","wordpass");
-        assertFalse(employerTest.isLoggedIn());
+        assertFalse("Employee logged in with wrong info", employerTest.isLoggedIn());
     }
 
 }
