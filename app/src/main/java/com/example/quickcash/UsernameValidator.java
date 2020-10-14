@@ -1,5 +1,12 @@
 package com.example.quickcash;
 
+/**
+ * Author: Aaron Gratto
+ * Date: 2020-10-14
+ *
+ * UsernameValidator class validates that usernames fit the requirements
+ */
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
