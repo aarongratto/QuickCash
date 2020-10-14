@@ -1,6 +1,5 @@
 package com.example.quickcash;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -71,5 +70,22 @@ public class LoginTests {
         assertTrue(v2.specialCheck());
         assertFalse(v3.specialCheck());
         assertTrue(v4.specialCheck());
+    }
+
+    //tests that user is already logged in
+    @Test
+    public void alreadyLoggedInTest(){
+        Employer e1 = new Employer();
+        Employer e2 = new Employer();
+        Employee e3 = new Employee();
+        Employee e4 = new Employee();
+
+        e1.login("Aaron", "pass");
+        e3.login("Patrick", "password");
+
+        assertTrue(e1.isLoggedIn());
+        assertFalse(e2.isLoggedIn());
+        assertTrue(e3.isLoggedIn());
+        assertFalse(e4.isLoggedIn());
     }
 }
