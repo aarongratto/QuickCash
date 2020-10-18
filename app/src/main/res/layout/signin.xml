@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    tools:context=".ui.startpage.Login">
 
     <ImageView
         android:id="@+id/imageView5"
@@ -33,7 +33,7 @@
         android:inputType="textPersonName"
         android:textColor="#ffff"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:inputType="textPassword"
         android:textColor="#ffff"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.357" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="133dp"
         android:layout_height="46dp"
         android:background="@drawable/custom_button2"
@@ -70,7 +70,7 @@
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -97,7 +97,7 @@
         app:layout_constraintVertical_bias="0.772" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/signup"
         android:layout_width="131dp"
         android:layout_height="45dp"
         android:background="@drawable/custom_button"
