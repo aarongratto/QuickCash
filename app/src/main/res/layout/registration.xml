@@ -12,8 +12,8 @@
         android:id="@+id/editText3"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/textEmail"
+        android:layout_alignLeft="@+id/textEmail"
         android:layout_marginTop="116dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/check"
@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -40,10 +40,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/textEmail"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/textPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="76dp"
         android:background="#11000000"
@@ -63,7 +63,7 @@
         android:id="@+id/editText5"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/textPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="128dp"
         android:background="#11000000"
@@ -80,11 +80,11 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/textPassword"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/textEmail"
+        android:layout_alignLeft="@+id/textEmail"
         android:layout_marginTop="64dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/pass"
@@ -96,7 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
     <TextView
         android:id="@+id/textView"
@@ -111,7 +111,7 @@
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/textEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +119,7 @@
         app:layout_constraintVertical_bias="0.902" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/buttonSignUp"
         android:layout_width="131dp"
         android:layout_height="45dp"
         android:background="@drawable/custom_button"
@@ -144,7 +144,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
