@@ -3,7 +3,6 @@ package com.example.quickcash.ui.startpage;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.IdlingRegistry;
 import androidx.test.espresso.IdlingResource;
-import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import com.example.quickcash.R;
@@ -20,7 +19,6 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.*;
 
 public class LoginTest {
     static String defaultEmail = "default@quickcash.com";
@@ -57,10 +55,10 @@ public class LoginTest {
         typeEmail(defaultEmail);
         typePassword(defaultPassword);
 
-        onView(withId(R.id.buttonLogin))
+        onView(withId(R.id.loginLoginButton))
                 .perform(click());
 
-        onView(withId(R.id.labelStatusMessage))
+        onView(withId(R.id.loginStatusMessage))
                 .check(matches(withText("Login success, as default@quickcash.com")));
     }
 
@@ -70,22 +68,22 @@ public class LoginTest {
         typeEmail(defaultEmail);
         typePassword(defaultPassword + "wrong");
 
-        onView(withId(R.id.buttonLogin))
+        onView(withId(R.id.loginLoginButton))
                 .perform(click());
 
-        onView(withId(R.id.labelStatusMessage))
+        onView(withId(R.id.loginStatusMessage))
                 .check(matches(withText("Login failed")));
     }
 
     public void typeEmail(String emailAddress) {
-        onView(withId(R.id.textEmail))
+        onView(withId(R.id.loginEmailText))
                 .perform(click())
                 .perform(typeText(emailAddress));
         closeSoftKeyboard();
     }
 
     public void typePassword(String password) {
-        onView(withId(R.id.textPassword))
+        onView(withId(R.id.loginPasswordText))
                 .perform(click())
                 .perform(typeText(password));
         closeSoftKeyboard();

@@ -27,8 +27,8 @@ public class Login extends AppCompatActivity {
     private EditText textEmail;
     private EditText textPassword;
     private TextView labelStatusMessage;
-    private Button login;
-    private Button signup;
+    private Button buttonLogin;
+    private Button buttonSignUp;
 
     @VisibleForTesting
     private CountingIdlingResource idlingResource;  // Idle resource for testing
@@ -37,12 +37,12 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin);
+        setContentView(R.layout.login);
 
-        login = (Button) findViewById(R.id.buttonLogin);
-        signup = (Button) findViewById(R.id.buttonSignUp);
+        buttonLogin = (Button) findViewById(R.id.loginLoginButton);
+        buttonSignUp = (Button) findViewById(R.id.loginRegisterButton);
 
-        signup.setOnClickListener(new View.OnClickListener(){
+        buttonSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 openSignupPage();
@@ -50,11 +50,11 @@ public class Login extends AppCompatActivity {
         });
 
         // Get UI elements
-        textEmail = findViewById(R.id.textEmail);
-        textPassword = findViewById(R.id.textPassword);
-        labelStatusMessage = findViewById(R.id.labelStatusMessage);
+        textEmail = findViewById(R.id.loginEmailText);
+        textPassword = findViewById(R.id.loginPasswordText);
+        labelStatusMessage = findViewById(R.id.loginStatusMessage);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login();
@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void openSignupPage(){
-        Intent intent = new Intent(this, SignUp.class);
+        Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }
 

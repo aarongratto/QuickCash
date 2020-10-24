@@ -6,15 +6,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.startpage.SignUp">
+    tools:context=".ui.startpage.Registration">
+
+    <Button
+        android:id="@+id/registrationLoginButton"
+        android:layout_width="131dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_button2"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrationRegisterButton" />
+
+    <TextView
+        android:id="@+id/registrationStatusMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrationConfirmPasswordText" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/registrationConfirmPasswordText"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textEmail"
-        android:layout_alignLeft="@+id/textEmail"
-        android:layout_marginTop="116dp"
+        android:layout_alignStart="@+id/registrationEmailText"
+        android:layout_alignLeft="@+id/registrationEmailText"
+        android:layout_marginTop="12dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/check"
         android:ems="10"
@@ -23,29 +47,28 @@
         android:textColor="#ffff"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationPasswordText" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/registrationIconImage"
         android:layout_width="185dp"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textEmail"
+        android:id="@+id/registrationUsernameText"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/textPassword"
+        android:layout_above="@+id/registrationPasswordText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="12dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/user"
         android:ems="10"
@@ -54,18 +77,18 @@
         android:textColor="#ffff"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/registrationEmailText"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_above="@+id/textPassword"
+        android:layout_above="@+id/registrationPasswordText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="12dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/email"
         android:ems="10"
@@ -74,18 +97,18 @@
         android:textColor="#ffff"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/registrationUsernameText"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/textPassword"
+        android:id="@+id/registrationPasswordText"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_alignStart="@+id/textEmail"
-        android:layout_alignLeft="@+id/textEmail"
-        android:layout_marginTop="64dp"
+        android:layout_alignStart="@+id/registrationEmailText"
+        android:layout_alignLeft="@+id/registrationEmailText"
+        android:layout_marginTop="12dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/pass"
         android:ems="10"
@@ -94,14 +117,15 @@
         android:textColor="#ffff"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationEmailText" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/registrationAppNameLabel"
         android:layout_width="96dp"
         android:layout_height="29dp"
+        android:layout_marginTop="12dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -111,41 +135,24 @@
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/textEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.902" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationIconImage" />
 
     <Button
-        android:id="@+id/buttonSignUp"
+        android:id="@+id/registrationRegisterButton"
         android:layout_width="131dp"
         android:layout_height="45dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/custom_button"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.672" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Sign-in here."
-        android:textColor="#ffff"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationStatusMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

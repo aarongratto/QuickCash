@@ -8,7 +8,7 @@
         android:id="@+id/signin"
         android:name="com.example.quickcash.ui.startpage.LoginFragment"
         android:label="signin"
-        tools:layout="@layout/signin" >
+        tools:layout="@layout/login" >
         <action
             android:id="@+id/action_signIn_to_registration"
             app:destination="@id/registration" />
