@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
         buttonSignUp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                openSignupPage();
+                openRegistrationPage();
             }
         });
 
@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
         fbAuth = FirebaseAuth.getInstance();
     }
 
-    public void openSignupPage(){
+    public void openRegistrationPage(){
         Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
     }

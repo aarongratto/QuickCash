@@ -1,4 +1,4 @@
-package com.example.quickcash;
+package com.example.quickcash.validators;
 
 /**
  * Author: Aaron Gratto
@@ -44,7 +44,7 @@ public class PasswordValidator {
         return matcher.matches();
     }
 
-    public boolean validate() {
+    public boolean validPassword() {
         return isLongEnough() && caseCheck() && specialCheck();
     }
 

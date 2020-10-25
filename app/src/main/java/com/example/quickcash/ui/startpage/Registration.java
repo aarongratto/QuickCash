@@ -2,6 +2,8 @@ package com.example.quickcash.ui.startpage;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.test.espresso.idling.CountingIdlingResource;
 import androidx.test.espresso.IdlingResource;
 
+import com.example.quickcash.validators.EmailValidator;
+import com.example.quickcash.validators.PasswordValidator;
 import com.example.quickcash.R;
+import com.example.quickcash.validators.UsernameValidator;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,7 +28,9 @@ public class Registration extends AppCompatActivity {
     private FirebaseAuth fbAuth;
 
     private EditText emailText;
+    private EditText usernameText;
     private EditText passwordText;
+    private EditText confirmPasswordText;
     private TextView statusMessageLabel;
     private Button registerButton;
     private Button loginButton;
@@ -43,10 +50,12 @@ public class Registration extends AppCompatActivity {
     }
 
     private void getUIElements() {
-        emailText = (EditText) findViewById(R.id.loginEmailText);
-        passwordText = (EditText) findViewById(R.id.loginPasswordText);
-        statusMessageLabel = (TextView) findViewById(R.id.loginStatusMessage);
-        registerButton = (Button) findViewById(R.id.registrationLoginButton);
+        emailText = (EditText) findViewById(R.id.registrationEmailText);
+        usernameText = (EditText) findViewById(R.id.registrationUsernameText);
+        passwordText = (EditText) findViewById(R.id.registrationPasswordText);
+        confirmPasswordText = (EditText) findViewById(R.id.registrationConfirmPasswordText);
+        statusMessageLabel = (TextView) findViewById(R.id.registrationStatusMessage);
+        registerButton = (Button) findViewById(R.id.registrationRegisterButton);
         loginButton = (Button) findViewById(R.id.registrationLoginButton);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -64,23 +73,52 @@ public class Registration extends AppCompatActivity {
     }
 
     private void register() {
-        idlingResource.increment();
+        if (validateInput()) {
+            idlingResource.increment();
 
-        fbAuth.createUserWithEmailAndPassword(emailText.getText().toString(),
-                passwordText.getText().toString())
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            statusMessageLabel.setText("Registration success, as "
-                                    + fbAuth.getCurrentUser().getEmail());
+            fbAuth.createUserWithEmailAndPassword(emailText.getText().toString(),
+                    passwordText.getText().toString())
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                statusMessageLabel.setText("Registration success");
+                            } else {
+                                statusMessageLabel.setText("Registration failed");
+                            }
+                            idlingResource.decrement();
                         }
-                        else {
-                            statusMessageLabel.setText("Registration failed");
-                        }
-                        idlingResource.decrement();
-                    }
-                });
+                    });
+        }
+
+    }
+
+    private boolean validateInput() {
+        EmailValidator emailValidator
+                = new EmailValidator(emailText.getText().toString());
+        UsernameValidator usernameValidator
+                = new UsernameValidator(usernameText.getText().toString());
+        PasswordValidator passwordValidator
+                = new PasswordValidator(passwordText.getText().toString());
+
+        if (!emailValidator.validEmail()) {
+            statusMessageLabel.setText("Invalid email");
+            return false;
+        }
+        if (!usernameValidator.validUser()) {
+            statusMessageLabel.setText("Invalid username");
+            return false;
+        }
+        if (!passwordValidator.validPassword()) {
+            statusMessageLabel.setText("Invalid password");
+            return false;
+        }
+        if (!passwordText.getText().toString().equals(confirmPasswordText.getText().toString())) {
+            statusMessageLabel.setText("Passwords don't match");
+            return false;
+        }
+
+        return true;
     }
 
     public void openLoginPage(){

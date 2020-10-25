@@ -1,6 +1,9 @@
 package com.example.quickcash;
 
-import org.junit.Assert;
+import com.example.quickcash.validators.EmailValidator;
+import com.example.quickcash.validators.PasswordValidator;
+import com.example.quickcash.validators.UsernameValidator;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

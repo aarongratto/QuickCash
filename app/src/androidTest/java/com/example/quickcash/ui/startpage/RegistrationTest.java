@@ -1,13 +1,23 @@
 package com.example.quickcash.ui.startpage;
 
+import androidx.annotation.NonNull;
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.IdlingRegistry;
 import androidx.test.espresso.IdlingResource;
+import androidx.test.espresso.idling.CountingIdlingResource;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 
 import com.example.quickcash.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -30,7 +40,7 @@ public class RegistrationTest {
     static String newUsername = "newuser";
     static String newPassword = "newPass123";
 
-    private IdlingResource idleResource;
+    private IdlingResource activityIdlingResource;
 
 
     // Setup
@@ -41,14 +51,31 @@ public class RegistrationTest {
 
     @Before
     public void setup() {
+        // Get idling resources
         activityScenarioRule.getScenario().onActivity(new ActivityScenario.ActivityAction<Registration>() {
             @Override
             public void perform(Registration activity) {
-                idleResource = activity.getIdleResource();
+                activityIdlingResource = activity.getIdleResource();
+                IdlingRegistry.getInstance().register(activityIdlingResource);
             }
         });
     }
 
+    @After
+    public void removeIdle() {
+        if (activityIdlingResource != null) {
+            IdlingRegistry.getInstance().unregister(activityIdlingResource);
+        }
+    }
+
+    @AfterClass
+    public static void teardown() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null && user.getEmail().equals(newEmail)) {
+            user.delete();
+        }
+    }
 
     // Tests
 
@@ -63,7 +90,8 @@ public class RegistrationTest {
                 .perform(click());
 
         onView(withId(R.id.registrationStatusMessage))
-                .check(matches(withText("Sign up successful!")));
+                .check(matches(withText("Registration success")));
+
     }
 
     @Test
@@ -77,7 +105,7 @@ public class RegistrationTest {
                 .perform(click());
 
         onView(withId(R.id.registrationStatusMessage))
-                .check(matches(withText("Sign up failed :(")));
+                .check(matches(withText("Registration failed")));
     }
 
     @Test
@@ -138,7 +166,6 @@ public class RegistrationTest {
 
 
     // Helper methods
-
     private void enterUsername(String username) {
         onView(withId(R.id.registrationUsernameText))
                 .perform(click())
