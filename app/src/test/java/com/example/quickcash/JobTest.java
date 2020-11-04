@@ -27,5 +27,24 @@ public class JobTest {
         assertEquals(25.00, h3.getJobWage(), 0);
     }
 
+    //testing for LookingForWork class that extends Job
+    @Test
+    public void validLookingForHireJobTest(){
+        LookingForWork l1 = new LookingForWork("Labor", "Antigonish", 12.55);
+        LookingForWork l2 = new LookingForWork("Volunteer", "Sydney", 0.00);
+        LookingForWork l3 = new LookingForWork("Web Designer", "Toronto", 21.00);
+
+        assertEquals("Labor", l1.getJobTitle());
+        assertEquals("Volunteer", l2.getJobTitle());
+        assertEquals("Web Designer", l3.getJobTitle());
+
+        assertEquals("Antigonish", l1.getJobLocation());
+        assertEquals("Sydney", l2.getJobLocation());
+        assertEquals("Toronto", l3.getJobLocation());
+
+        assertEquals(12.55, l1.getJobWage(), 0);
+        assertEquals(0.00, l2.getJobWage(), 0);
+        assertEquals(21.00, l3.getJobWage(), 0);
+    }
 
 }
