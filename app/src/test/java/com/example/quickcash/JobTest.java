@@ -10,41 +10,59 @@ public class JobTest {
     //testing for Hiring class that extends Job
     @Test
     public void validHiringJobTest(){
-        Hiring h1 = new Hiring("Chef", "Truro", 15.20);
-        Hiring h2 = new Hiring("Software Engineer", "Halifax", 20.56);
-        Hiring h3 = new Hiring("Carpenter", "Montreal", 25.00);
+        //creating three Hiring job objects
+        Hiring hiringObject1 = new Hiring("Chef", "Truro", 15.20);
+        Hiring hiringObject2 = new Hiring("Software Engineer", "Halifax", 20.56);
+        Hiring hiringObject3 = new Hiring("Carpenter", "Montreal", 25.00);
 
-        assertEquals("Chef", h1.getJobTitle());
-        assertEquals("Software Engineer", h2.getJobTitle());
-        assertEquals("Carpenter", h3.getJobTitle());
+        //assert that the object can return the jobTitle correctly
+        assertEquals("Chef", hiringObject1.getJobTitle());
+        assertEquals("Software Engineer", hiringObject2.getJobTitle());
+        assertEquals("Carpenter", hiringObject3.getJobTitle());
 
-        assertEquals("Truro", h1.getJobLocation());
-        assertEquals("Halifax", h2.getJobLocation());
-        assertEquals("Montreal", h3.getJobLocation());
+        //assert that the object can return the jobLocation correctly
+        assertEquals("Truro", hiringObject1.getJobLocation());
+        assertEquals("Halifax", hiringObject2.getJobLocation());
+        assertEquals("Montreal", hiringObject3.getJobLocation());
 
-        assertEquals(15.20, h1.getJobWage(), 0);
-        assertEquals(20.56, h2.getJobWage(), 0);
-        assertEquals(25.00, h3.getJobWage(), 0);
+        //assert that the object can return the jobWage correctly
+        assertEquals(15.20, hiringObject1.getJobWage(), 0);
+        assertEquals(20.56, hiringObject2.getJobWage(), 0);
+        assertEquals(25.00, hiringObject3.getJobWage(), 0);
+
+        //assert that the object can return the jobType correctly
+        assertEquals("Hiring", hiringObject1.getJobType());
+        assertEquals("Hiring", hiringObject2.getJobType());
+        assertEquals("Hiring", hiringObject3.getJobType());
     }
 
     //testing for LookingForWork class that extends Job
     @Test
     public void validLookingForHireJobTest(){
-        LookingForWork l1 = new LookingForWork("Labor", "Antigonish", 12.55);
-        LookingForWork l2 = new LookingForWork("Volunteer", "Sydney", 0.00);
-        LookingForWork l3 = new LookingForWork("Web Designer", "Toronto", 21.00);
+        //creating three LookingForWork job objects
+        LookingForWork lookingWorkObject1 = new LookingForWork("Labor", "Antigonish", 12.55);
+        LookingForWork lookingWorkObject2 = new LookingForWork("Volunteer", "Sydney", 0.00);
+        LookingForWork lookingWorkObject3 = new LookingForWork("Web Designer", "Toronto", 21.00);
 
-        assertEquals("Labor", l1.getJobTitle());
-        assertEquals("Volunteer", l2.getJobTitle());
-        assertEquals("Web Designer", l3.getJobTitle());
+        //assert that the object can return the jobTitle correctly
+        assertEquals("Labor", lookingWorkObject1.getJobTitle());
+        assertEquals("Volunteer", lookingWorkObject2.getJobTitle());
+        assertEquals("Web Designer", lookingWorkObject3.getJobTitle());
 
-        assertEquals("Antigonish", l1.getJobLocation());
-        assertEquals("Sydney", l2.getJobLocation());
-        assertEquals("Toronto", l3.getJobLocation());
+        //assert that the object can return the jobLocation correctly
+        assertEquals("Antigonish", lookingWorkObject1.getJobLocation());
+        assertEquals("Sydney", lookingWorkObject2.getJobLocation());
+        assertEquals("Toronto", lookingWorkObject3.getJobLocation());
 
-        assertEquals(12.55, l1.getJobWage(), 0);
-        assertEquals(0.00, l2.getJobWage(), 0);
-        assertEquals(21.00, l3.getJobWage(), 0);
+        //assert that the object can return the jobWage correctly
+        assertEquals(12.55, lookingWorkObject1.getJobWage(), 0);
+        assertEquals(0.00, lookingWorkObject2.getJobWage(), 0);
+        assertEquals(21.00, lookingWorkObject3.getJobWage(), 0);
+
+        //assert that the object can return the jobType correctly
+        assertEquals("Looking for work", lookingWorkObject1.getJobType());
+        assertEquals("Looking for work", lookingWorkObject2.getJobType());
+        assertEquals("Looking for work", lookingWorkObject3.getJobType());
     }
 
 }
