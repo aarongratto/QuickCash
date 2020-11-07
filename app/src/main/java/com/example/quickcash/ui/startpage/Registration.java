@@ -80,6 +80,8 @@ public class Registration extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 statusMessageLabel.setText("Registration success");
+                                Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                                startActivity(intent);
                             } else {
                                 statusMessageLabel.setText("Registration failed");
                             }
@@ -119,8 +121,9 @@ public class Registration extends AppCompatActivity {
     }
 
    public void openLoginPage(){
-   Intent intent = new Intent(this, Login.class);
-   startActivity(intent);
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+        finish();
    }
 
     public IdlingResource getIdleResource() {

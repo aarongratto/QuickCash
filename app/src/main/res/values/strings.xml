@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Quick Cash</string>
+    <string name="message_location_select">Location</string>
 
-    <string-array name="names">
+    <string-array name="locations">
+
             <item>Location</item>
             <item>Halifax</item>
             <item>Pictou</item>
