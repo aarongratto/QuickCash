@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Quick Cash</string>
-</resources>
+
+    <string-array name="names">
+            <item>Please select a Location</item>
+            <item>Halifax</item>
+            <item>Dartmouth</item>
+            <item>Lunenburg</item>
+            <item>Antigonish</item>
+    </string-array>
+
+    </resources>
