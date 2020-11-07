@@ -2,11 +2,11 @@ package com.example.quickcash.ui.startpage;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,9 +42,7 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration);
-
         getUIElements();
-
         idlingResource = new CountingIdlingResource("FirebaseCalls");
         fbAuth = FirebaseAuth.getInstance();
     }
@@ -57,7 +55,6 @@ public class Registration extends AppCompatActivity {
         statusMessageLabel = (TextView) findViewById(R.id.registrationStatusMessage);
         registerButton = (Button) findViewById(R.id.registrationRegisterButton);
         loginButton = (Button) findViewById(R.id.registrationLoginButton);
-
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +90,7 @@ public class Registration extends AppCompatActivity {
 
     }
 
-    private boolean validateInput() {
+       private boolean validateInput() {
         EmailValidator emailValidator
                 = new EmailValidator(emailText.getText().toString());
         UsernameValidator usernameValidator
@@ -121,12 +118,13 @@ public class Registration extends AppCompatActivity {
         return true;
     }
 
-    public void openLoginPage(){
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
-    }
+   public void openLoginPage(){
+   Intent intent = new Intent(this, Login.class);
+   startActivity(intent);
+   }
 
     public IdlingResource getIdleResource() {
         return idlingResource;
     }
+
 }

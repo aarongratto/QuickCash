@@ -203,10 +203,10 @@
         android:layout_height="41dp"
         android:background="#ffff"
         android:inputType="textPersonName"
-        android:queryHint="Search for jobs"
+        android:queryHint="Search jobs"
         android:textColor="#f000"
         android:textSize="18dp"
-        android:visibility="visible"
+        android:iconifiedByDefault="false"
         app:layout_constraintBottom_toTopOf="@+id/registrationUsernameText"
         app:layout_constraintEnd_toStartOf="@+id/spinner"
         app:layout_constraintHorizontal_bias="0.666"
@@ -227,9 +227,9 @@
 
     <EditText
         android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="333dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="338dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="Enter text here..."
@@ -237,7 +237,7 @@
         android:maxLines="10"
         android:minLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationUsernameText" />
 
