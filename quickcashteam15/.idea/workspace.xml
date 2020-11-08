@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce2a9ce2-2e09-4276-8c47-30e925862181" name="Default Changelist" comment="" />
+    <list default="true" id="ce2a9ce2-2e09-4276-8c47-30e925862181" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main_page.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_XL_API_30" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -21,7 +24,7 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1ibWbmowa7D4BLkme0XgJrGAdyk" />
@@ -108,10 +111,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1602798893403">
+    <state x="430" y="0" key="#app" timestamp="1604581854162">
       <screen x="0" y="0" width="1366" height="736" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1602798893403" />
+    <state x="430" y="0" key="#app/0.0.1366.736@0.0.1366.736" timestamp="1604581854162" />
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1604581895091">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.736@0.0.1366.736" timestamp="1604581895091" />
+    <state x="279" y="83" key="IDE.errors.dialog" timestamp="1604581840083">
+      <screen x="0" y="0" width="1366" height="736" />
+    </state>
+    <state x="279" y="83" key="IDE.errors.dialog/0.0.1366.736@0.0.1366.736" timestamp="1604581840083" />
     <state x="379" y="192" key="com.intellij.ide.util.TipDialog" timestamp="1602367362713">
       <screen x="0" y="0" width="1366" height="736" />
     </state>

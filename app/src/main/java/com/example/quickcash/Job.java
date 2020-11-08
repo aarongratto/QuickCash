@@ -49,7 +49,6 @@ class Hiring extends Job {
         this.jobLocation = jobLocation;
         this.jobWage = jobWage;
     }
-
 }
 
 /**

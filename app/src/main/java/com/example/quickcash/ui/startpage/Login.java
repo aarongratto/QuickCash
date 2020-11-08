@@ -69,6 +69,7 @@ public class Login extends AppCompatActivity {
     public void openRegistrationPage(){
         Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
+        finish();
     }
 
     protected void login() {
@@ -82,6 +83,8 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             labelStatusMessage.setText("Login success, as "
                                     + fbAuth.getCurrentUser().getEmail());
+                            Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                            startActivity(intent);
                         }
                         else {
                             labelStatusMessage.setText("Login failed");
