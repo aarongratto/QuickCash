@@ -1,5 +1,6 @@
 package com.example.quickcash.ui.startpage;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,7 +36,7 @@ public class MainPage extends AppCompatActivity {
     private EditText jobTitleText;
     private EditText jobDescText;
     private EditText jobWageText;
-    private Button registerButton;
+    private Button createJobButton;
     private ArrayAdapter<String> myAdapter;
 
 
@@ -60,19 +61,24 @@ public class MainPage extends AppCompatActivity {
     }
 
     private void getUIElements() {
-        //searchingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
-        //addingLocationSpinner = (Spinner) findViewById(R.id.jobAddLocationSpinner);
-       // myAdapter = new ArrayAdapter<String>(MainPage.this,
-                //android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
-        //myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //searchingLocationSpinner.setAdapter(myAdapter);
-        //addingLocationSpinner.setAdapter(myAdapter);
-        /*registerButton.setOnClickListener(new View.OnClickListener() {
+        searchingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
+        addingLocationSpinner = (Spinner) findViewById(R.id.jobAddLocationSpinner);
+        createJobButton = (Button) findViewById(R.id.jobCreateJobButton);
+        jobTitleText = (EditText) findViewById(R.id.jobAddTitleTextEdit);
+        jobDescText = (EditText) findViewById(R.id.jobAddDescTextEdit);
+        jobWageText = (EditText) findViewById(R.id.jobAddWageText);
+
+        myAdapter = new ArrayAdapter<String>(MainPage.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        searchingLocationSpinner.setAdapter(myAdapter);
+        addingLocationSpinner.setAdapter(myAdapter);
+        createJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                register();
+
             }
-        });*/
+        });
     }
 
     public void initializeFirebase(){

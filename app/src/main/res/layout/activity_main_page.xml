@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.startpage.Registration">
+    tools:context=".ui.startpage.MainPage">
 
     <Spinner
         android:id="@+id/jobAddLocationSpinner"
@@ -17,15 +17,14 @@
         android:layout_marginTop="364dp"
         android:background="#11000000"
         android:ems="10"
+        android:entries="@array/locations"
         android:spinnerMode="dialog"
         android:textColor="#808080"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
-        android:entries="@array/locations"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
 
     <TextView
         android:id="@+id/jobAddLocationLabel"
@@ -202,11 +201,11 @@
         android:layout_width="174dp"
         android:layout_height="41dp"
         android:background="#ffff"
+        android:iconifiedByDefault="false"
         android:inputType="textPersonName"
         android:queryHint="Search jobs"
         android:textColor="#f000"
         android:textSize="18dp"
-        android:iconifiedByDefault="false"
         app:layout_constraintBottom_toTopOf="@+id/jobAddTitleTextEdit"
         app:layout_constraintEnd_toStartOf="@+id/jobSearchLocationSpinner"
         app:layout_constraintHorizontal_bias="0.666"

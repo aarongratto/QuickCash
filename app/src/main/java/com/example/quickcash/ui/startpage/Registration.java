@@ -34,6 +34,7 @@ public class Registration extends AppCompatActivity {
     private TextView statusMessageLabel;
     private Button registerButton;
     private Button loginButton;
+    boolean taskSuccess;
 
     @VisibleForTesting
     private CountingIdlingResource idlingResource;  // Idle resource for testing
@@ -59,6 +60,10 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 register();
+                if (taskSuccess){
+                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                    startActivity(intent);
+                }
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener(){
@@ -78,10 +83,9 @@ public class Registration extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            taskSuccess = task.isSuccessful();
                             if (task.isSuccessful()) {
                                 statusMessageLabel.setText("Registration success");
-                                Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                                startActivity(intent);
                             } else {
                                 statusMessageLabel.setText("Registration failed");
                             }
