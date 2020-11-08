@@ -16,6 +16,7 @@ public abstract class Job{
     protected String jobType;
     protected String jobTitle;
     protected String jobLocation;
+    protected String jobDescription;
     protected double jobWage;
 
     /*
@@ -30,6 +31,7 @@ public abstract class Job{
     public String getJobType() { return jobType; }
     public String getJobTitle() { return jobTitle; }
     public String getJobLocation() { return jobLocation; }
+    public String getJobDescription() { return jobDescription; }
     public double getJobWage() { return jobWage; }
 
 

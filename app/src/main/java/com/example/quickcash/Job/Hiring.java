@@ -11,10 +11,11 @@ public class Hiring extends Job {
 
     public Hiring(){}
 
-    public Hiring(String jobTitle, String jobLocation, double jobWage){
+    public Hiring(String jobTitle, String jobLocation, String jobDescription, double jobWage){
         this.jobType = "Hiring"; //set job type to "Hiring"
         this.jobTitle = jobTitle;
         this.jobLocation = jobLocation;
+        this.jobDescription = jobDescription;
         this.jobWage = jobWage;
     }
 

@@ -20,10 +20,10 @@ import java.util.List;
 
 public class JobDatabaseTest {
     //create two new 'Hiring' job objects
-    Hiring h1 = new Hiring("Chef", "Truro", 15.20);
-    Hiring h2 = new Hiring("Software Engineer", "Halifax", 20.56);
-    LookingForWork l1 = new LookingForWork("Labor", "Antigonish", 12.55);
-    LookingForWork l2 = new LookingForWork("Volunteer", "Sydney", 0.00);
+    Hiring h1 = new Hiring("Chef", "Truro", "We are looking to hire a new chef", 15.20);
+    Hiring h2 = new Hiring("Software Engineer", "Halifax", "We are looking to hire a new Software Engineer", 20.56);
+    LookingForWork l1 = new LookingForWork("Labor", "Antigonish", "I am looking for a labor job", 12.55);
+    LookingForWork l2 = new LookingForWork("Volunteer", "Sydney", "I am looking for a volunteer position", 0.00);
     List<Job> jobsInDatabase = new ArrayList<>();
 
 

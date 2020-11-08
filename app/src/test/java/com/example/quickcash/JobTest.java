@@ -1,5 +1,7 @@
 package com.example.quickcash;
 
+import com.example.quickcash.Job.Hiring;
+import com.example.quickcash.Job.LookingForWork;
 import com.example.quickcash.validators.EmailValidator;
 
 import org.junit.Test;
@@ -11,9 +13,9 @@ public class JobTest {
     @Test
     public void validHiringJobTest(){
         //creating three Hiring job objects
-        Hiring hiringObject1 = new Hiring("Chef", "Truro", 15.20);
-        Hiring hiringObject2 = new Hiring("Software Engineer", "Halifax", 20.56);
-        Hiring hiringObject3 = new Hiring("Carpenter", "Montreal", 25.00);
+        Hiring hiringObject1 = new Hiring("Chef", "Truro", "", 15.20);
+        Hiring hiringObject2 = new Hiring("Software Engineer", "Halifax", "", 20.56);
+        Hiring hiringObject3 = new Hiring("Carpenter", "Montreal", "", 25.00);
 
         //assert that the object can return the jobTitle correctly
         assertEquals("Chef", hiringObject1.getJobTitle());
@@ -40,9 +42,9 @@ public class JobTest {
     @Test
     public void validLookingForHireJobTest(){
         //creating three LookingForWork job objects
-        LookingForWork lookingWorkObject1 = new LookingForWork("Labor", "Antigonish", 12.55);
-        LookingForWork lookingWorkObject2 = new LookingForWork("Volunteer", "Sydney", 0.00);
-        LookingForWork lookingWorkObject3 = new LookingForWork("Web Designer", "Toronto", 21.00);
+        LookingForWork lookingWorkObject1 = new LookingForWork("Labor", "Antigonish", "", 12.55);
+        LookingForWork lookingWorkObject2 = new LookingForWork("Volunteer", "Sydney", "", 0.00);
+        LookingForWork lookingWorkObject3 = new LookingForWork("Web Designer", "Toronto", "", 21.00);
 
         //assert that the object can return the jobTitle correctly
         assertEquals("Labor", lookingWorkObject1.getJobTitle());
