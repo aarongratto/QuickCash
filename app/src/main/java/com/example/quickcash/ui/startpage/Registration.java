@@ -92,7 +92,7 @@ public class Registration extends AppCompatActivity {
 
     }
 
-       private boolean validateInput() {
+    private boolean validateInput() {
         EmailValidator emailValidator
                 = new EmailValidator(emailText.getText().toString());
         UsernameValidator usernameValidator
@@ -120,11 +120,11 @@ public class Registration extends AppCompatActivity {
         return true;
     }
 
-   public void openLoginPage(){
+    public void openLoginPage(){
         Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
         finish();
-   }
+    }
 
     public IdlingResource getIdleResource() {
         return idlingResource;

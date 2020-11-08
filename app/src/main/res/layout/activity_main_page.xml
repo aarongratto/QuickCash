@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/registration"
+    android:id="@+id/job"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context=".ui.startpage.Registration">
 
     <Spinner
-        android:id="@+id/locationSpinner2"
+        android:id="@+id/jobAddLocationSpinner"
         android:layout_width="342dp"
         android:layout_height="37dp"
         android:layout_above="@+id/registrationPasswordText"
@@ -23,12 +23,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
         android:entries="@array/locations"
         />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel4"
+        android:id="@+id/jobAddLocationLabel"
         android:layout_width="217dp"
         android:layout_height="23dp"
         android:layout_marginTop="488dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel6"
+        android:id="@+id/jobAddWageLabel"
         android:layout_width="217dp"
         android:layout_height="23dp"
         android:layout_marginStart="32dp"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel5"
+        android:id="@+id/jobSearchJobLabel"
         android:layout_width="186dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel3"
+        android:id="@+id/jobAddDescLabel"
         android:layout_width="150dp"
         android:layout_height="28dp"
         android:layout_marginStart="32dp"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel2"
+        android:id="@+id/jobAddTitleLabel"
         android:layout_width="150dp"
         android:layout_height="28dp"
         android:layout_marginStart="32dp"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/registrationIconImage"
+        android:id="@+id/jobIconImage"
         android:layout_width="112dp"
         android:layout_height="104dp"
         android:layout_marginTop="16dp"
@@ -126,7 +126,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/registrationUsernameText"
+        android:id="@+id/jobAddTitleTextEdit"
         android:layout_width="342dp"
         android:layout_height="37dp"
         android:layout_above="@+id/registrationPasswordText"
@@ -141,11 +141,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/registrationUsernameText2"
+        android:id="@+id/jobAddWageText"
         android:layout_width="342dp"
         android:layout_height="37dp"
         android:layout_above="@+id/registrationPasswordText"
@@ -160,11 +160,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/registrationAppNameLabel"
+        android:id="@+id/jobAppNameLabel"
         android:layout_width="255dp"
         android:layout_height="24dp"
         android:layout_marginStart="76dp"
@@ -182,7 +182,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/registrationRegisterButton"
+        android:id="@+id/jobCreateJobButton"
         android:layout_width="138dp"
         android:layout_height="49dp"
         android:background="@drawable/custom_button"
@@ -194,11 +194,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationUsernameText2"
+        app:layout_constraintTop_toBottomOf="@+id/jobAddWageText"
         app:layout_constraintVertical_bias="0.264" />
 
     <SearchView
-        android:id="@+id/search_bar"
+        android:id="@+id/jobSearchBar"
         android:layout_width="174dp"
         android:layout_height="41dp"
         android:background="#ffff"
@@ -207,28 +207,28 @@
         android:textColor="#f000"
         android:textSize="18dp"
         android:iconifiedByDefault="false"
-        app:layout_constraintBottom_toTopOf="@+id/registrationUsernameText"
-        app:layout_constraintEnd_toStartOf="@+id/locationSpinner1"
+        app:layout_constraintBottom_toTopOf="@+id/jobAddTitleTextEdit"
+        app:layout_constraintEnd_toStartOf="@+id/jobSearchLocationSpinner"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
         app:layout_constraintVertical_bias="0.505" />
 
     <Spinner
-        android:id="@+id/locationSpinner1"
+        android:id="@+id/jobSearchLocationSpinner"
         android:layout_width="174dp"
         android:layout_height="41dp"
         android:layout_marginEnd="16dp"
         android:background="#ffff"
         android:entries="@array/locations"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/registrationUsernameText"
+        app:layout_constraintBottom_toTopOf="@+id/jobAddTitleTextEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.812" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
+        android:id="@+id/jobAddDescTextEdit"
         android:layout_width="338dp"
         android:layout_height="96dp"
         android:layout_marginTop="44dp"
@@ -241,7 +241,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationUsernameText" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAddTitleTextEdit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
