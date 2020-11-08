@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".ui.startpage.MainPage">
+    tools:context=".ui.activities.MainPage">
 
     <Spinner
         android:id="@+id/jobAddLocationSpinner"

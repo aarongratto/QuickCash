@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.startpage;
+package com.example.quickcash.ui.activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;

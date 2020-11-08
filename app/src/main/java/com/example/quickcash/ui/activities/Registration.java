@@ -1,12 +1,10 @@
-package com.example.quickcash.ui.startpage;
+package com.example.quickcash.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -61,8 +59,7 @@ public class Registration extends AppCompatActivity {
             public void onClick(View view) {
                 register();
                 if (taskSuccess){
-                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                    startActivity(intent);
+                    openMainPage();
                 }
             }
         });
@@ -128,6 +125,11 @@ public class Registration extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Login.class);
         startActivity(intent);
         finish();
+    }
+
+    public void openMainPage(){
+        Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        startActivity(intent);
     }
 
     public IdlingResource getIdleResource() {

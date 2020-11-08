@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.startpage;
+package com.example.quickcash.ui.activities;
 
 
 import android.content.Intent;
@@ -60,8 +60,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 login();
                 if (taskSuccess){
-                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                    startActivity(intent);
+                    openMainPage();
                 }
             }
         });
@@ -75,6 +74,11 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(this, Registration.class);
         startActivity(intent);
         finish();
+    }
+
+    public void openMainPage(){
+        Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        startActivity(intent);
     }
 
     protected void login() {
