@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.startpage;
+package com.example.quickcash.ui.activities;
 
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.IdlingRegistry;

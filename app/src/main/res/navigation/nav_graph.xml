@@ -6,7 +6,7 @@
     app:startDestination="@id/signin">
     <fragment
         android:id="@+id/signin"
-        android:name="com.example.quickcash.ui.startpage.LoginFragment"
+        android:name="com.example.quickcash.ui.activities.LoginFragment"
         android:label="signin"
         tools:layout="@layout/login" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/registration"
-        android:name="com.example.quickcash.ui.startpage.SignUpFragment"
+        android:name="com.example.quickcash.ui.activities.SignUpFragment"
         android:label="registration"
         tools:layout="@layout/registration"
         >

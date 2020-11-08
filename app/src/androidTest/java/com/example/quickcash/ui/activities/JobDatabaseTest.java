@@ -1,4 +1,4 @@
-package com.example.quickcash.ui.startpage;
+package com.example.quickcash.ui.activities;
 
 import android.util.Log;
 import androidx.test.core.app.ActivityScenario;
@@ -6,14 +6,11 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
-import com.example.quickcash.ui.startpage.MainPage;
 
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
