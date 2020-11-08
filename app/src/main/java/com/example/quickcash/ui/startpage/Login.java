@@ -29,6 +29,7 @@ public class Login extends AppCompatActivity {
     private TextView labelStatusMessage;
     private Button buttonLogin;
     private Button buttonSignUp;
+    boolean taskSuccess;
 
     @VisibleForTesting
     private CountingIdlingResource idlingResource;  // Idle resource for testing
@@ -58,6 +59,10 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login();
+                if (taskSuccess){
+                    Intent intent = new Intent(getApplicationContext(), MainPage.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -80,11 +85,10 @@ public class Login extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
+                        taskSuccess = task.isSuccessful();
+                        if (taskSuccess) {
                             labelStatusMessage.setText("Login success, as "
                                     + fbAuth.getCurrentUser().getEmail());
-                            Intent intent = new Intent(getApplicationContext(), MainPage.class);
-                            startActivity(intent);
                         }
                         else {
                             labelStatusMessage.setText("Login failed");
