@@ -9,7 +9,7 @@
     tools:context="ui.activities.CreateJob">
 
     <ImageView
-        android:id="@+id/jobCreateIcon"
+        android:id="@+id/CJ_icon"
         android:layout_width="112dp"
         android:layout_height="104dp"
         android:layout_marginTop="16dp"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/money" />
 
     <ImageView
-        android:id="@+id/create_to_main"
+        android:id="@+id/CJ_to_main"
         android:layout_width="38dp"
         android:layout_height="27dp"
         android:layout_marginStart="16dp"
@@ -40,7 +40,7 @@
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobCreateIcon" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_icon" />
 
     <TextView
         android:id="@+id/CJ_task_title_message"
