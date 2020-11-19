@@ -125,7 +125,7 @@
         app:layout_constraintTop_toBottomOf="@+id/CJ_location_message" />
 
     <TextView
-        android:id="@+id/CJ_payment_amount"
+        android:id="@+id/CJ_payment_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -138,7 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/CJ_payment_enter"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -148,7 +148,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_message" />
 
     <Button
         android:id="@+id/CJ_create_button"
@@ -160,5 +160,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_enter" />
 </androidx.constraintlayout.widget.ConstraintLayout>
