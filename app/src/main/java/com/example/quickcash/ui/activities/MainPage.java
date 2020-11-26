@@ -1,20 +1,20 @@
 package com.example.quickcash.ui.activities;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.example.quickcash.R;
-import android.util.Log;
-
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
+import com.example.quickcash.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -76,7 +76,7 @@ public class MainPage extends AppCompatActivity {
         createJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //goToCJPage();
             }
         });
     }
@@ -120,4 +120,10 @@ public class MainPage extends AppCompatActivity {
         db.removeValue();
         Log.d("TAG1", "data wiped");
     }
+
+   /* //temporally usage for testing UI
+    public void goToCJPage(){
+        Intent intent = new Intent(getApplicationContext(), CreateJob.class);
+        startActivity(intent);
+    }*/
 }
