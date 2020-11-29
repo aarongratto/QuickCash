@@ -17,15 +17,15 @@ Author: Junied Ahmed Jisan
         android:id="@+id/CJ_create_job_title2"
         android:layout_width="182dp"
         android:layout_height="30dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="28dp"
         android:text="Search for a job"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobIconImage" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
 
     <TextView
         android:id="@+id/jobAddLocationLabel2"
@@ -47,7 +47,7 @@ Author: Junied Ahmed Jisan
         app:layout_constraintVertical_bias="0.742" />
 
     <TextView
-        android:id="@+id/jobAddLocationLabel"
+        android:id="@+id/jobTitleLabel"
         android:layout_width="217dp"
         android:layout_height="23dp"
         android:forceDarkAllowed="true"
@@ -96,7 +96,7 @@ Author: Junied Ahmed Jisan
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/jobCreateJobButton"
+        android:id="@+id/SearchJobButton"
         android:layout_width="138dp"
         android:layout_height="49dp"
         android:background="@drawable/custom_button"
@@ -134,7 +134,7 @@ Author: Junied Ahmed Jisan
         android:background="#ffff"
         android:entries="@array/locations"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/jobCreateJobButton"
+        app:layout_constraintBottom_toTopOf="@+id/SearchJobButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
