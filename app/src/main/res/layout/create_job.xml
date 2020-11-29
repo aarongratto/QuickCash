@@ -13,7 +13,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context="ui.activities.CreateJob">
-
++
     <TextView
         android:id="@+id/jobAppNameLabel2"
         android:layout_width="255dp"
@@ -82,7 +82,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title" />
 
     <EditText
-        android:id="@+id/CJ_task_title_enter"
+        android:id="@+id/jobAddTitleTextEdit"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -109,10 +109,10 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_enter" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAddTitleTextEdit" />
 
     <EditText
-        android:id="@+id/CJ_task_description_enter"
+        android:id="@+id/jobAddDescTextEdit"
         android:layout_width="296dp"
         android:layout_height="87dp"
         android:layout_marginTop="12dp"
@@ -138,7 +138,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_enter" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAddDescTextEdit" />
 
     <Spinner
         android:id="@+id/CJ_location_spinner"
@@ -170,7 +170,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner" />
 
     <EditText
-        android:id="@+id/CJ_payment_enter"
+        android:id="@+id/jobAddWageText"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginTop="4dp"
@@ -194,6 +194,6 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_enter"
+        app:layout_constraintTop_toBottomOf="@+id/jobAddWageText"
         app:layout_constraintVertical_bias="0.214" />
 </androidx.constraintlayout.widget.ConstraintLayout>

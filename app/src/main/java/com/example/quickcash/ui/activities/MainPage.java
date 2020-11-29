@@ -62,14 +62,14 @@ public class MainPage extends AppCompatActivity {
 
     private void getUIElements() {
         searchingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
-        addingLocationSpinner = (Spinner) findViewById(R.id.jobAddLocationSpinner);
+        addingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
         createJobButton = (Button) findViewById(R.id.jobCreateJobButton);
         jobTitleText = (EditText) findViewById(R.id.jobAddTitleTextEdit);
         jobDescText = (EditText) findViewById(R.id.jobAddDescTextEdit);
         jobWageText = (EditText) findViewById(R.id.jobAddWageText);
 
         myAdapter = new ArrayAdapter<String>(MainPage.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
+        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         searchingLocationSpinner.setAdapter(myAdapter);
         addingLocationSpinner.setAdapter(myAdapter);
