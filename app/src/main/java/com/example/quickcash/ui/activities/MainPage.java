@@ -1,12 +1,10 @@
 package com.example.quickcash.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,14 +28,8 @@ public class MainPage extends AppCompatActivity {
     DatabaseReference db;
     int key = 0;
     final List<Job> jobsInDatabase = new ArrayList<>();
-
-    private Spinner searchingLocationSpinner;
-    private Spinner addingLocationSpinner;
-    private EditText jobTitleText;
-    private EditText jobDescText;
-    private EditText jobWageText;
     private Button createJobButton;
-    private ArrayAdapter<String> myAdapter;
+    private Button searchJobButton;
 
 
     @Override
@@ -61,25 +53,22 @@ public class MainPage extends AppCompatActivity {
     }
 
     private void getUIElements() {
-        searchingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
-        addingLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
         createJobButton = (Button) findViewById(R.id.jobCreateJobButton);
-        jobTitleText = (EditText) findViewById(R.id.jobAddTitleTextEdit);
-        jobDescText = (EditText) findViewById(R.id.jobAddDescTextEdit);
-        jobWageText = (EditText) findViewById(R.id.jobAddWageText);
-
-        myAdapter = new ArrayAdapter<String>(MainPage.this,
-        android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        searchingLocationSpinner.setAdapter(myAdapter);
-        addingLocationSpinner.setAdapter(myAdapter);
         createJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //goToCJPage();
+                goToCJPage();
+            }
+        });
+        searchJobButton = (Button) findViewById(R.id.SearchJobButton);
+        searchJobButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                SJPage();
             }
         });
     }
+
 
     public void initializeFirebase(){
         this.db = FirebaseDatabase.getInstance().getReference();
@@ -121,9 +110,16 @@ public class MainPage extends AppCompatActivity {
         Log.d("TAG1", "data wiped");
     }
 
-   /* //temporally usage for testing UI
     public void goToCJPage(){
-        Intent intent = new Intent(getApplicationContext(), CreateJob.class);
-        startActivity(intent);
-    }*/
+        Intent create = new Intent(getApplicationContext(), CreateJob.class);
+        startActivity(create);
+        finish();
+    }
+
+    public void SJPage() {
+        Intent search = new Intent(getApplicationContext(), SearchJob.class);
+        startActivity(search);
+        finish();
+    }
+
 }

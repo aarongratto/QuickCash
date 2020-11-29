@@ -7,44 +7,29 @@ Author: Junied Ahmed Jisan
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/job"
+    android:id="@+id/job_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context=".ui.activities.MainPage">
 
-    <Button
-        android:id="@+id/SearchJobButton"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="272dp"
-        android:background="@drawable/custom_button2"
-        android:text="Search Job"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/jobIconImage"
         android:layout_width="185dp"
         android:layout_height="200dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="64dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
-        app:layout_constraintBottom_toBottomOf="@+id/jobAppNameLabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/jobAppNameLabel"
         android:layout_width="257dp"
         android:layout_height="23dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="8dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -54,28 +39,38 @@ Author: Junied Ahmed Jisan
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/SearchJobButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/jobIconImage" />
 
     <Button
         android:id="@+id/jobCreateJobButton"
         android:layout_width="250dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="356dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/custom_button"
         android:text="Create Job"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/jobAppNameLabel"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
+
+    <Button
+        android:id="@+id/SearchJobButton"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button2"
+        android:text="Search Job"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

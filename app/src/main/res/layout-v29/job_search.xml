@@ -13,7 +13,7 @@ Author: Junied Ahmed Jisan
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context=".ui.activities.SearchJob">
-+
+
     <TextView
         android:id="@+id/jobSearchjobTitle"
         android:layout_width="182dp"
@@ -151,7 +151,8 @@ Author: Junied Ahmed Jisan
         android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="@drawable/abc_vector_test"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

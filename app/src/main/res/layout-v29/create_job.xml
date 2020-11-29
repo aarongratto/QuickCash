@@ -12,8 +12,8 @@ Author: Junied Ahmed Jisan, Takumi Kariya
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context="ui.activities.CreateJob">
-+
+    tools:context=".ui.activities.CreateJob">
+
     <TextView
         android:id="@+id/CJ_appName"
         android:layout_width="255dp"
@@ -52,7 +52,8 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:clickable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="@drawable/abc_vector_test"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/CJ_create_job_title"
