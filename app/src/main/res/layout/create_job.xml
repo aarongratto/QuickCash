@@ -19,7 +19,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:layout_width="255dp"
         android:layout_height="24dp"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="176dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -36,8 +36,9 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:id="@+id/CJ_icon"
         android:layout_width="178dp"
         android:layout_height="148dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/money" />
@@ -112,8 +113,8 @@ Author: Junied Ahmed Jisan, Takumi Kariya
 
     <EditText
         android:id="@+id/CJ_task_description_enter"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_width="296dp"
+        android:layout_height="87dp"
         android:layout_marginTop="12dp"
         android:background="#11000000"
         android:ems="10"

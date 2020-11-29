@@ -2,7 +2,7 @@
 <!--
 Author: Junied Ahmed Jisan
 * Date: 2020-11-28
-* Landing/Dashboard page connecting to Job add and Job search pages
+* Job Search page giving a list of jobs available
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +17,7 @@ Author: Junied Ahmed Jisan
         android:id="@+id/CJ_create_job_title2"
         android:layout_width="182dp"
         android:layout_height="30dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="80dp"
         android:text="Search for a job"
         android:textColor="@android:color/white"
         android:textSize="24sp"
@@ -41,10 +41,10 @@ Author: Junied Ahmed Jisan
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/jobSearchLocationSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jobSearchBar"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="0.742" />
 
     <TextView
         android:id="@+id/jobAddLocationLabel"
@@ -60,20 +60,20 @@ Author: Junied Ahmed Jisan
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/jobSearchBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title2"
-        app:layout_constraintVertical_bias="0.792" />
+        app:layout_constraintVertical_bias="0.783" />
 
     <ImageView
         android:id="@+id/jobIconImage"
         android:layout_width="178dp"
         android:layout_height="148dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,8 +81,8 @@ Author: Junied Ahmed Jisan
         android:id="@+id/jobAppNameLabel"
         android:layout_width="255dp"
         android:layout_height="24dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="200dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -99,7 +99,6 @@ Author: Junied Ahmed Jisan
         android:id="@+id/jobCreateJobButton"
         android:layout_width="138dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="188dp"
         android:background="@drawable/custom_button"
         android:text="Search Job"
         android:textAllCaps="false"
@@ -107,14 +106,16 @@ Author: Junied Ahmed Jisan
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobSearchBar"
+        app:layout_constraintVertical_bias="0.419" />
 
     <SearchView
         android:id="@+id/jobSearchBar"
         android:layout_width="325dp"
         android:layout_height="40dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="60dp"
         android:background="#ffff"
         android:iconifiedByDefault="false"
         android:inputType="textPersonName"
@@ -122,23 +123,23 @@ Author: Junied Ahmed Jisan
         android:textColor="#f000"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title2" />
 
     <Spinner
         android:id="@+id/jobSearchLocationSpinner"
-        android:layout_width="322dp"
-        android:layout_height="37dp"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
         android:background="#ffff"
         android:entries="@array/locations"
         android:spinnerMode="dialog"
         app:layout_constraintBottom_toTopOf="@+id/jobCreateJobButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jobSearchBar"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.637" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
