@@ -13,13 +13,13 @@ Author: Junied Ahmed Jisan, Takumi Kariya
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context="ui.activities.CreateJob">
-+
+    +
+
     <TextView
         android:id="@+id/CJ_appName"
         android:layout_width="255dp"
         android:layout_height="24dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="168dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -29,18 +29,22 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/CJ_create_job_title"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/CJ_icon"
         android:layout_width="178dp"
         android:layout_height="148dp"
-        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/money" />
 
     <ImageView
@@ -63,23 +67,28 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintHorizontal_bias="0.248"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_icon"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CJ_task_title_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Job Title: "
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.175"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title"
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/CJ_addTitle"
@@ -92,10 +101,12 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:inputType="text"
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_message" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_message"
+        app:layout_constraintVertical_bias="0.002" />
 
     <TextView
         android:id="@+id/CJ_task_description_message"
@@ -106,25 +117,29 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_addTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_addTitle"
+        app:layout_constraintVertical_bias="0.005" />
 
     <EditText
         android:id="@+id/CJ_addDescription"
-        android:layout_width="296dp"
+        android:layout_width="300dp"
         android:layout_height="87dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:background="#11000000"
         android:ems="10"
         android:gravity="clip_vertical"
         android:hint="Enter the description"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_message" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_message"
+        app:layout_constraintVertical_bias="0.014" />
 
     <TextView
         android:id="@+id/CJ_location_message"
@@ -135,10 +150,12 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_addDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_addDescription"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/CJ_location_spinner"
@@ -150,38 +167,44 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         android:spinnerMode="dialog"
         android:touchscreenBlocksFocus="false"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_location_message" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_location_message"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/CJ_payment_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         android:text="Job Payment Amount:"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.267"
+        app:layout_constraintHorizontal_bias="0.262"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/CJ_addWage"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:background="#11000000"
         android:ems="10"
         android:hint="Enter amount $"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_message" />
+        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_message"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/CJ_create_button"
@@ -195,5 +218,5 @@ Author: Junied Ahmed Jisan, Takumi Kariya
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CJ_addWage"
-        app:layout_constraintVertical_bias="0.214" />
+        app:layout_constraintVertical_bias="0.285" />
 </androidx.constraintlayout.widget.ConstraintLayout>
