@@ -9,14 +9,13 @@ package com.example.quickcash.Job;
  */
 public class Hiring extends Job {
 
-    public Hiring(){}
-
     public Hiring(String jobTitle, String jobLocation, String jobDescription, double jobWage){
+        super(jobTitle, jobLocation, jobDescription, jobWage);
+    }
+
+    @Override
+    protected void setJobType() {
         this.jobType = "Hiring"; //set job type to "Hiring"
-        this.jobTitle = jobTitle;
-        this.jobLocation = jobLocation;
-        this.jobDescription = jobDescription;
-        this.jobWage = jobWage;
     }
 
 }

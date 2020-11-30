@@ -23,7 +23,16 @@ public abstract class Job{
      * No need for another Job constructor as 'Hiring' and 'Looking for Work' objects
      * will be used instead
      */
-    public Job(){}
+    public Job(String jobTitle, String jobLocation, String jobDescription, double jobWage){
+        this.jobTitle = jobTitle;
+        this.jobLocation = jobLocation;
+        this.jobDescription = jobDescription;
+        this.jobWage = jobWage;
+        setJobType();
+    }
+
+    // Force classes to set a job type
+    protected abstract void setJobType();
 
     protected void setJobTitle(String jobTitle){ this.jobTitle = jobTitle; }
     protected void setJobWage(double jobWage){ this.jobWage = jobWage; }

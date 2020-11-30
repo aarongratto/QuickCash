@@ -67,4 +67,5 @@ public class JobTest {
         assertEquals("Looking for work", lookingWorkObject3.getJobType());
     }
 
+    // Test that the Job will return the correct type
 }
