@@ -1,5 +1,8 @@
 package com.example.quickcash.Job;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Author: Aaron Gratto
  * Date: 2020-11-04
@@ -18,6 +21,7 @@ public abstract class Job{
     protected String jobLocation;
     protected String jobDescription;
     protected double jobWage;
+    protected List<String> preferences;
 
     /*
      * No need for another Job constructor as 'Hiring' and 'Looking for Work' objects
@@ -42,7 +46,14 @@ public abstract class Job{
     public String getJobLocation() { return jobLocation; }
     public String getJobDescription() { return jobDescription; }
     public double getJobWage() { return jobWage; }
-
-
+    public List<String> getPreferences() { return preferences; }
+    public void addPreferences(List<String> newPreferences) {
+        if (this.preferences == null) {
+            this.preferences = new ArrayList<>(newPreferences);
+        }
+        else {
+            this.preferences.addAll(newPreferences);
+        }
+    }
 }
 
