@@ -12,7 +12,12 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.R;
-
+/**
+ * Author: Takumi Kariya
+ * Date: 2020-11-29
+ *
+ * Create Job class initiates creation using UI elements
+ */
 public class CreateJob extends AppCompatActivity {
 
     private Spinner CJLocationSpinner;

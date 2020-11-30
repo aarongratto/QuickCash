@@ -18,12 +18,13 @@ Author: Junied Ahmed Jisan
         android:id="@+id/jobIconImage"
         android:layout_width="185dp"
         android:layout_height="200dp"
-        android:layout_marginTop="64dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/jobAppNameLabel"
@@ -39,9 +40,11 @@ Author: Junied Ahmed Jisan
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobIconImage" />
+        app:layout_constraintTop_toBottomOf="@+id/jobIconImage"
+        app:layout_constraintVertical_bias="0.022" />
 
     <Button
         android:id="@+id/jobCreateJobButton"
@@ -53,9 +56,12 @@ Author: Junied Ahmed Jisan
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/SearchJobButton"
@@ -67,10 +73,12 @@ Author: Junied Ahmed Jisan
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton" />
+        app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

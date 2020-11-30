@@ -18,13 +18,14 @@ Author: Junied Ahmed Jisan
         android:id="@+id/loginIconImage"
         android:layout_width="185dp"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
 
     <EditText
         android:id="@+id/loginEmailText"
@@ -40,10 +41,12 @@ Author: Junied Ahmed Jisan
         android:inputType="textPersonName"
         android:textColor="#ffff"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginAppNameLabel"
+        app:layout_constraintVertical_bias="0.019"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -76,9 +79,11 @@ Author: Junied Ahmed Jisan
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginStatusMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/loginStatusMessage"
+        app:layout_constraintVertical_bias="0.038" />
 
     <TextView
         android:id="@+id/loginAppNameLabel"
@@ -94,15 +99,17 @@ Author: Junied Ahmed Jisan
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginIconImage" />
+        app:layout_constraintTop_toBottomOf="@+id/loginIconImage"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/loginRegisterButton"
-        android:layout_width="131dp"
-        android:layout_height="45dp"
+        android:layout_width="133dp"
+        android:layout_height="46dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/custom_button"
         android:text="Register"
@@ -111,6 +118,7 @@ Author: Junied Ahmed Jisan
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginLoginButton"
         app:layout_constraintVertical_bias="0.0" />

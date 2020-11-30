@@ -44,7 +44,7 @@ Author: Junied Ahmed Jisan
         android:layout_height="40dp"
         android:layout_alignStart="@+id/registrationEmailText"
         android:layout_alignLeft="@+id/registrationEmailText"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/check"
         android:ems="10"
@@ -52,21 +52,24 @@ Author: Junied Ahmed Jisan
         android:inputType="textPassword"
         android:textColor="#ffff"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationPasswordText" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationPasswordText"
+        app:layout_constraintVertical_bias="0.027" />
 
     <ImageView
         android:id="@+id/registrationIconImage"
         android:layout_width="185dp"
         android:layout_height="200dp"
-        android:layout_marginTop="20dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
 
     <EditText
         android:id="@+id/registrationUsernameText"
@@ -82,19 +85,21 @@ Author: Junied Ahmed Jisan
         android:inputType="textPersonName"
         android:textColor="#ffff"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationAppNameLabel"
+        app:layout_constraintVertical_bias="0.02"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/registrationEmailText"
         android:layout_width="250dp"
-        android:layout_height="42dp"
+        android:layout_height="40dp"
         android:layout_above="@+id/registrationPasswordText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/email"
         android:ems="10"
@@ -102,10 +107,12 @@ Author: Junied Ahmed Jisan
         android:inputType="textPersonName"
         android:textColor="#ffff"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registrationUsernameText"
+        app:layout_constraintVertical_bias="0.013"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -122,10 +129,12 @@ Author: Junied Ahmed Jisan
         android:inputType="textPassword"
         android:textColor="#ffff"
         android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationEmailText" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationEmailText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/registrationAppNameLabel"
@@ -141,24 +150,28 @@ Author: Junied Ahmed Jisan
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationIconImage" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationIconImage"
+        app:layout_constraintVertical_bias="0.046" />
 
     <Button
         android:id="@+id/registrationRegisterButton"
         android:layout_width="131dp"
         android:layout_height="45dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/custom_button"
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registrationStatusMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/registrationStatusMessage"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
