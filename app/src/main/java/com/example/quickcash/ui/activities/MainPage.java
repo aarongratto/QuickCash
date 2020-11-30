@@ -113,13 +113,11 @@ public class MainPage extends AppCompatActivity {
     public void goToCJPage(){
         Intent create = new Intent(getApplicationContext(), CreateJob.class);
         startActivity(create);
-        finish();
     }
 
     public void SJPage() {
         Intent search = new Intent(getApplicationContext(), SearchJob.class);
         startActivity(search);
-        finish();
     }
 
 }

@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +16,7 @@ import com.example.quickcash.R;
 public class SearchJob extends AppCompatActivity {
 
     private Spinner SJLocationSpinner;
-    private EditText SJTitle;
+    private SearchView SJTitle;
     private Button SJButtonToSearch;
     private ImageView SJButtonToMain;
     private ArrayAdapter<String> SJAdapter;
@@ -32,7 +32,7 @@ public class SearchJob extends AppCompatActivity {
 
     private void SJgetUIElements(){
         SJLocationSpinner = (Spinner) findViewById(R.id.jobSearchLocationSpinner);
-        SJTitle = (EditText) findViewById(R.id.jobSearchBar);
+        SJTitle = (SearchView) findViewById(R.id.jobSearchBar);
         SJButtonToSearch = (Button) findViewById(R.id.SearchJobButton);
         SJButtonToMain = (ImageView) findViewById(R.id.jobbackMain);
 
