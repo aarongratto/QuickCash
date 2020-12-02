@@ -25,9 +25,7 @@ import java.util.List;
 
 
 public class MainPage extends AppCompatActivity {
-    DatabaseReference db;
-    int key = 0;
-    final List<Job> jobsInDatabase = new ArrayList<>();
+
     private Button createJobButton;
     private Button searchJobButton;
 
@@ -38,18 +36,6 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
         getUIElements();
 
-        initializeFirebase();
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                synchronizeDatabase(snapshot);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     private void getUIElements() {
@@ -69,46 +55,6 @@ public class MainPage extends AppCompatActivity {
         });
     }
 
-
-    public void initializeFirebase(){
-        this.db = FirebaseDatabase.getInstance().getReference();
-        Log.d("TAG1", "after init");
-    }
-
-    public void addToDatabase(Job job) {
-        db.child(String.valueOf(key)).setValue(job);
-        key++;
-        Log.d("TAG1", String.valueOf(key));
-        Log.d("TAG1", "new job added: " +job.getJobTitle());
-    }
-
-    public void synchronizeDatabase(DataSnapshot snapshot){
-        Iterator<DataSnapshot> it = snapshot.getChildren().iterator();
-        while (it.hasNext()){
-            DataSnapshot jobSnapshot = it.next();
-            String currentJob = jobSnapshot.getValue().toString();
-            Log.d("TAG1", "new read: " +currentJob);
-            if (currentJob.endsWith("jobType=Hiring}")){
-                Hiring hiringJob = jobSnapshot.getValue(Hiring.class);
-                jobsInDatabase.add(hiringJob);
-            }
-            else {
-                LookingForWork lookingJob = jobSnapshot.getValue(LookingForWork.class);
-                jobsInDatabase.add(lookingJob);
-            }
-        }
-        Log.d("TAG1", "Database size: " +jobsInDatabase.size());
-    }
-
-    public List<Job> getJobsInDatabase(){
-        return jobsInDatabase;
-    }
-
-
-    public void wipeDatabase(){
-        db.removeValue();
-        Log.d("TAG1", "data wiped");
-    }
 
     public void goToCJPage(){
         Intent create = new Intent(getApplicationContext(), CreateJob.class);
