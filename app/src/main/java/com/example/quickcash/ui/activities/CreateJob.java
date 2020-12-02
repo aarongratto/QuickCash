@@ -12,7 +12,12 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.R;
-
+/**
+ * Author: Takumi Kariya
+ * Date: 2020-11-29
+ *
+ * Create Job class initiates creation using UI elements
+ */
 public class CreateJob extends AppCompatActivity {
 
     private Spinner CJLocationSpinner;
@@ -27,10 +32,10 @@ public class CreateJob extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_job);
-        getUIElements();
+        CJgetUIElements();
     }
 
-    private void getUIElements(){
+    private void CJgetUIElements(){
         CJLocationSpinner = (Spinner) findViewById(R.id.CJ_location_spinner);
         CJTitle = (EditText) findViewById(R.id.CJ_task_title_enter);
         CJDescription = (EditText) findViewById(R.id.CJ_task_description_enter);
@@ -51,6 +56,8 @@ public class CreateJob extends AppCompatActivity {
                     }
                 }
         );
+
+        //need to be modified to search job on server
         CJButtonToCreate.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -65,6 +72,7 @@ public class CreateJob extends AppCompatActivity {
     private void toMainPage(){
         Intent intent = new Intent(getApplicationContext(), MainPage.class);
         startActivity(intent);
+        finish();
     }
 
 }

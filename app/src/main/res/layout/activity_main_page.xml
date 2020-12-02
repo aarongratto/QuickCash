@@ -1,173 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Junied Ahmed Jisan
+* Date: 2020-11-28
+* Landing/Dashboard page connecting to Job add and Job search pages
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/job"
+    android:id="@+id/job_search"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     tools:context=".ui.activities.MainPage">
 
-    <Spinner
-        android:id="@+id/jobAddLocationSpinner"
-        android:layout_width="342dp"
-        android:layout_height="37dp"
-        android:layout_above="@+id/registrationPasswordText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="364dp"
-        android:background="#11000000"
-        android:ems="10"
-        android:entries="@array/locations"
-        android:spinnerMode="dialog"
-        android:textColor="#808080"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
-
-    <TextView
-        android:id="@+id/jobAddLocationLabel"
-        android:layout_width="217dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="488dp"
-        android:forceDarkAllowed="true"
-        android:text="Location:"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/jobAddWageLabel"
-        android:layout_width="217dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="568dp"
-        android:forceDarkAllowed="true"
-        android:text="Task Payment Amount:"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/jobSearchJobLabel"
-        android:layout_width="186dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="168dp"
-        android:forceDarkAllowed="true"
-        android:text="Search or Create Jobs:"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/jobAddDescLabel"
-        android:layout_width="150dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="340dp"
-        android:forceDarkAllowed="true"
-        android:text="Task Description:"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/jobAddTitleLabel"
-        android:layout_width="150dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="256dp"
-        android:forceDarkAllowed="true"
-        android:text="Task Title:"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/jobIconImage"
-        android:layout_width="112dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="185dp"
+        android:layout_height="200dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/jobAddTitleTextEdit"
-        android:layout_width="342dp"
-        android:layout_height="37dp"
-        android:layout_above="@+id/registrationPasswordText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
-        android:background="#11000000"
-        android:ems="10"
-        android:hint="Enter task title"
-        android:inputType="textPersonName"
-        android:textColor="#ffff"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/jobAddWageText"
-        android:layout_width="342dp"
-        android:layout_height="37dp"
-        android:layout_above="@+id/registrationPasswordText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="444dp"
-        android:background="#11000000"
-        android:ems="10"
-        android:hint="Enter amount $"
-        android:inputType="textPersonName"
-        android:textColor="#ffff"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
 
     <TextView
         android:id="@+id/jobAppNameLabel"
-        android:layout_width="255dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="257dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="8dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -177,13 +40,17 @@
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/jobIconImage"
+        app:layout_constraintVertical_bias="0.022" />
 
     <Button
         android:id="@+id/jobCreateJobButton"
-        android:layout_width="138dp"
-        android:layout_height="49dp"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/custom_button"
         android:text="Create Job"
         android:textAllCaps="false"
@@ -191,56 +58,27 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAddWageText"
-        app:layout_constraintVertical_bias="0.264" />
-
-    <SearchView
-        android:id="@+id/jobSearchBar"
-        android:layout_width="174dp"
-        android:layout_height="41dp"
-        android:background="#ffff"
-        android:iconifiedByDefault="false"
-        android:inputType="textPersonName"
-        android:queryHint="Search jobs"
-        android:textColor="#f000"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/jobAddTitleTextEdit"
-        app:layout_constraintEnd_toStartOf="@+id/jobSearchLocationSpinner"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Spinner
-        android:id="@+id/jobSearchLocationSpinner"
-        android:layout_width="174dp"
-        android:layout_height="41dp"
-        android:layout_marginEnd="16dp"
-        android:background="#ffff"
-        android:entries="@array/locations"
-        android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/jobAddTitleTextEdit"
+    <Button
+        android:id="@+id/SearchJobButton"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button2"
+        android:text="Search Job"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812" />
-
-    <EditText
-        android:id="@+id/jobAddDescTextEdit"
-        android:layout_width="338dp"
-        android:layout_height="96dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:hint="Enter text here..."
-        android:inputType="textMultiLine"
-        android:maxLines="10"
-        android:minLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAddTitleTextEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
