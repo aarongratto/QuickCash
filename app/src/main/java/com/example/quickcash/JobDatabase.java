@@ -17,6 +17,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Author: Aaron Gratto
+ * Date: 2020-12-02
+ *
+ * Class for the Job Database and its functions/methods
+ */
+
 public class JobDatabase {
     DatabaseReference db;
     List<Job> jobsInDatabase = new ArrayList<>();
@@ -55,6 +62,7 @@ public class JobDatabase {
     }
 
     public List<Job> synchronizeDatabase(DataSnapshot snapshot){
+        List<Job> tempDatabaseList = new ArrayList<>();
         Iterator<DataSnapshot> it = snapshot.getChildren().iterator();
         while (it.hasNext()){
             DataSnapshot jobSnapshot = it.next();
@@ -62,15 +70,16 @@ public class JobDatabase {
             Log.d("TAG1", "new read: " +currentJob);
             if (currentJob.endsWith("jobType=Hiring}")){
                 Hiring hiringJob = jobSnapshot.getValue(Hiring.class);
-                jobsInDatabase.add(hiringJob);
+                tempDatabaseList.add(hiringJob);
             }
             else {
                 LookingForWork lookingJob = jobSnapshot.getValue(LookingForWork.class);
-                jobsInDatabase.add(lookingJob);
+                tempDatabaseList.add(lookingJob);
             }
         }
-        Log.d("TAG1", "Database size: " +jobsInDatabase.size());
-        return jobsInDatabase;
+        Log.d("TAG1", "Database size: " +tempDatabaseList.size());
+        return tempDatabaseList;
     }
+
 
 }
