@@ -2,6 +2,7 @@ package com.example.quickcash.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,9 +12,16 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quickcash.Job.Job;
+import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CreateJob extends AppCompatActivity {
+    JobDatabase jDB;
+    List<Job> jobsInDatabase = new ArrayList<>();
 
     private Spinner CJLocationSpinner;
     private EditText CJTitle;
@@ -28,6 +36,8 @@ public class CreateJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_job);
         getUIElements();
+
+        jDB = new JobDatabase();
     }
 
     private void getUIElements(){
@@ -67,4 +77,17 @@ public class CreateJob extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void addToDatabase(Job job) {
+        jDB.addToDatabase(job);
+    }
+
+
+    public List<Job> getJobsInDatabase(){
+        return jobsInDatabase;
+    }
+
+    public void wipeDatabase(){
+        jDB.wipeDatabase();
+        Log.d("TAG1", "data wiped");
+    }
 }

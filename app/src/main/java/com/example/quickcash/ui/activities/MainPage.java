@@ -29,7 +29,6 @@ import java.util.List;
 
 public class MainPage extends AppCompatActivity {
     JobDatabase jDB;
-    //int key = 0;
     List<Job> jobsInDatabase = new ArrayList<>();
 
     private Spinner searchingLocationSpinner;
