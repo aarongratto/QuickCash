@@ -2,6 +2,7 @@ package com.example.quickcash.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,14 +12,26 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quickcash.Job.Hiring;
+import com.example.quickcash.Job.Job;
+import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Author: Takumi Kariya
  * Date: 2020-11-29
  *
  * Create Job class initiates creation using UI elements
  */
+
+
+
 public class CreateJob extends AppCompatActivity {
+    JobDatabase jDB;
+    List<Job> jobsInDatabase = new ArrayList<>();
 
     private Spinner CJLocationSpinner;
     private Spinner CJJobtypeSpinner;
@@ -35,6 +48,8 @@ public class CreateJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_job);
         CJgetUIElements();
+
+        jDB = new JobDatabase();
     }
 
     private void CJgetUIElements(){
@@ -71,7 +86,7 @@ public class CreateJob extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        addToDatabase();
                     }
                 }
         );
@@ -84,4 +99,23 @@ public class CreateJob extends AppCompatActivity {
         finish();
     }
 
+    public void addToDatabase() {
+        String jTitle = CJTitle.getText().toString();
+        String jLocation = CJLocationSpinner.getSelectedItem().toString();
+        String jDesc = CJDescription.getText().toString();
+        double jWage = Double.parseDouble(CJWage.getText().toString());
+
+        Hiring job = new Hiring(jTitle, jLocation, jDesc, jWage);
+        jDB.addToDatabase(job);
+    }
+
+
+    public List<Job> getJobsInDatabase(){
+        return jobsInDatabase;
+    }
+
+    public void wipeDatabase(){
+        jDB.wipeDatabase();
+        Log.d("TAG1", "data wiped");
+    }
 }
