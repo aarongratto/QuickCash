@@ -184,7 +184,7 @@ Author: Junied Ahmed Jisan, Takumi Kariya
             android:background="#11000000"
             android:ems="10"
             android:hint="Enter amount $"
-            android:inputType="number"
+            android:inputType="number|text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.486"
             app:layout_constraintStart_toStartOf="parent"
@@ -208,5 +208,4 @@ Author: Junied Ahmed Jisan, Takumi Kariya
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
-
 
