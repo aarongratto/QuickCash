@@ -1,5 +1,6 @@
 package com.example.quickcash.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -65,7 +66,7 @@ public class MainPage extends AppCompatActivity {
         createJobButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //goToCJPage();
+                goToCJPage();
             }
         });
     }
@@ -85,9 +86,9 @@ public class MainPage extends AppCompatActivity {
         Log.d("TAG1", "data wiped");
     }
 
-   /* //temporally usage for testing UI
+   //temporally usage for testing UI
     public void goToCJPage(){
         Intent intent = new Intent(getApplicationContext(), CreateJob.class);
         startActivity(intent);
-    }*/
+    }
 }

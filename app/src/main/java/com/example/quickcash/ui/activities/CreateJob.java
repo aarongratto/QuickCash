@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
@@ -65,7 +66,7 @@ public class CreateJob extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        addToDatabase();
                     }
                 }
         );
@@ -77,7 +78,13 @@ public class CreateJob extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void addToDatabase(Job job) {
+    public void addToDatabase() {
+        String jTitle = CJTitle.getText().toString();
+        String jLocation = CJLocationSpinner.getSelectedItem().toString();
+        String jDesc = CJDescription.getText().toString();
+        double jWage = Double.parseDouble(CJWage.getText().toString());
+
+        Hiring job = new Hiring(jTitle, jLocation, jDesc, jWage);
         jDB.addToDatabase(job);
     }
 
