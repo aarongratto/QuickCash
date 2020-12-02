@@ -21,12 +21,14 @@ import com.example.quickcash.R;
 public class CreateJob extends AppCompatActivity {
 
     private Spinner CJLocationSpinner;
+    private Spinner CJJobtypeSpinner;
     private EditText CJTitle;
     private EditText CJDescription;
     private EditText CJWage;
     private Button CJButtonToCreate;
     private ImageView CJButtonToMain;
-    private ArrayAdapter<String> CJAdapter;
+    private ArrayAdapter<String> CJAdapterLocation;
+    private ArrayAdapter<String> CJAdapterJobtype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +39,24 @@ public class CreateJob extends AppCompatActivity {
 
     private void CJgetUIElements(){
         CJLocationSpinner = (Spinner) findViewById(R.id.CJ_location_spinner);
+        CJJobtypeSpinner = (Spinner) findViewById(R.id.CJ_jobtype_spinner);
         CJTitle = (EditText) findViewById(R.id.CJ_task_title_enter);
         CJDescription = (EditText) findViewById(R.id.CJ_task_description_enter);
         CJWage = (EditText) findViewById(R.id.CJ_payment_enter);
         CJButtonToCreate = (Button) findViewById(R.id.CJ_create_button);
         CJButtonToMain = (ImageView) findViewById(R.id.CJ_to_main);
 
-        CJAdapter = new ArrayAdapter<String>(CreateJob.this,
+        CJAdapterLocation = new ArrayAdapter<String>(CreateJob.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
-        CJAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        CJAdapterLocation.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        CJLocationSpinner.setAdapter(CJAdapter);
+        CJLocationSpinner.setAdapter(CJAdapterLocation);
+
+        CJAdapterJobtype = new ArrayAdapter<String>(CreateJob.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.job_type));
+        CJAdapterJobtype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        CJJobtypeSpinner.setAdapter(CJAdapterJobtype);
 
         CJButtonToMain.setOnClickListener(
                 new View.OnClickListener() {

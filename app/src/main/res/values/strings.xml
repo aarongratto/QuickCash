@@ -20,4 +20,10 @@ Author: Junied Ahmed Jisan
             <item>Other</item>
     </string-array>
 
+    <string-array name="job_type">
+        <item>Select</item>
+        <item>Hiring</item>
+        <item>Looking for Job</item>
+    </string-array>
+
     </resources>
