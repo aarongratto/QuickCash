@@ -19,7 +19,6 @@ import java.util.List;
 
 public class JobDatabase {
     DatabaseReference db;
-    int key = 0;
     List<Job> jobsInDatabase = new ArrayList<>();
 
     public JobDatabase(){
@@ -42,9 +41,7 @@ public class JobDatabase {
     }
 
     public void addToDatabase(Job job) {
-        db.child(String.valueOf(key)).setValue(job);
-        key++;
-        Log.d("TAG1", String.valueOf(key));
+        db.child(String.valueOf(System.currentTimeMillis())).setValue(job);
         Log.d("TAG1", "new job added: " +job.getJobTitle());
     }
 
