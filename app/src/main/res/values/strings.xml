@@ -1,10 +1,15 @@
+<!--
+Author: Junied Ahmed Jisan
+* Date: 2020-11-28
+* Location variable names
+-->
 <resources>
     <string name="app_name">Quick Cash</string>
     <string name="message_location_select">Location</string>
 
     <string-array name="locations">
 
-            <item>Location</item>
+            <item>Select</item>
             <item>Halifax</item>
             <item>Pictou</item>
             <item>Kings</item>
