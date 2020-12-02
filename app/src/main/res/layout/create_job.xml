@@ -5,218 +5,208 @@ Author: Junied Ahmed Jisan, Takumi Kariya
 *Job add page UI with title, description, and payment amount
 *Create job button to create a job
 -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/create_job"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context="ui.activities.CreateJob">
-    +
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/CJ_appName"
-        android:layout_width="255dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="168dp"
-        android:forceDarkAllowed="true"
-        android:text="Quick Cash"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textIsSelectable="false"
-        android:textSize="18sp"
-        android:textStyle="bold|italic"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/CJ_create_job_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    <androidx.constraintlayout.widget.ConstraintLayout
 
-    <ImageView
-        android:id="@+id/CJ_icon"
-        android:layout_width="178dp"
-        android:layout_height="148dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027"
-        app:srcCompat="@drawable/money" />
-
-    <ImageView
-        android:id="@+id/CJ_to_main"
-        android:layout_width="38dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
-
-    <TextView
-        android:id="@+id/CJ_create_job_title"
-        android:layout_width="182dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="40dp"
-        android:text="Create a Job"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_icon"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/CJ_task_title_message"
-        android:layout_width="wrap_content"
+        android:id="@+id/create_job"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Job Title: "
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title"
-        app:layout_constraintVertical_bias="0.008" />
+        android:background="@drawable/gradient"
+        tools:context=".ui.activities.CreateJob">
 
-    <EditText
-        android:id="@+id/CJ_addTitle"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="#11000000"
-        android:ems="15"
-        android:hint="Enter task title"
-        android:inputType="text"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_message"
-        app:layout_constraintVertical_bias="0.002" />
+        <TextView
+            android:id="@+id/CJ_appName"
+            android:layout_width="255dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="76dp"
+            android:layout_marginTop="176dp"
+            android:forceDarkAllowed="true"
+            android:text="Quick Cash"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#ffff"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CJ_task_description_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Job Description:"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_addTitle"
-        app:layout_constraintVertical_bias="0.005" />
+        <ImageView
+            android:id="@+id/CJ_icon"
+            android:layout_width="178dp"
+            android:layout_height="148dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/money" />
 
-    <EditText
-        android:id="@+id/CJ_addDescription"
-        android:layout_width="300dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="4dp"
-        android:background="#11000000"
-        android:ems="10"
-        android:gravity="clip_vertical"
-        android:hint="Enter the description"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_message"
-        app:layout_constraintVertical_bias="0.014" />
+        <ImageView
+            android:id="@+id/CJ_to_main"
+            android:layout_width="38dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/abc_vector_test"
+            android:focusable="true" />
 
-    <TextView
-        android:id="@+id/CJ_location_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Location:"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_addDescription"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/CJ_create_job_title"
+            android:layout_width="182dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:text="Create a Job"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.227"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_icon" />
 
-    <Spinner
-        android:id="@+id/CJ_location_spinner"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:background="#11000000"
-        android:entries="@array/locations"
-        android:spinnerMode="dialog"
-        android:touchscreenBlocksFocus="false"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_location_message"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/CJ_task_title_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="16dp"
+            android:text="Job Title: "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_create_job_title" />
 
-    <TextView
-        android:id="@+id/CJ_payment_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Job Payment Amount:"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner"
-        app:layout_constraintVertical_bias="0.0" />
+        <EditText
+            android:id="@+id/CJ_task_title_enter"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:background="#11000000"
+            android:ems="15"
+            android:hint="Enter task title"
+            android:inputType="text"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_message" />
 
-    <EditText
-        android:id="@+id/CJ_addWage"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="#11000000"
-        android:ems="10"
-        android:hint="Enter amount $"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_payment_message"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/CJ_task_description_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Job Description:"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.207"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_task_title_enter" />
 
-    <Button
-        android:id="@+id/CJ_create_button"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/custom_button"
-        android:text="Create Job"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CJ_addWage"
-        app:layout_constraintVertical_bias="0.285" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/CJ_task_description_enter"
+            android:layout_width="296dp"
+            android:layout_height="87dp"
+            android:layout_marginTop="12dp"
+            android:background="#11000000"
+            android:ems="10"
+            android:gravity="clip_vertical"
+            android:hint="Enter the description"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.468"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_message" />
+
+        <TextView
+            android:id="@+id/CJ_location_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Location:"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_task_description_enter" />
+
+        <Spinner
+            android:id="@+id/CJ_location_spinner"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:background="#11000000"
+            android:entries="@array/locations"
+            android:spinnerMode="dialog"
+            android:touchscreenBlocksFocus="false"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_location_message" />
+
+        <TextView
+            android:id="@+id/CJ_payment_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Job Payment Amount:"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.267"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_location_spinner" />
+
+        <EditText
+            android:id="@+id/CJ_payment_enter"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:background="#11000000"
+            android:ems="10"
+            android:hint="Enter amount $"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_payment_message" />
+
+        <Button
+            android:id="@+id/CJ_create_button"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/custom_button"
+            android:text="Create Job"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/CJ_payment_enter"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

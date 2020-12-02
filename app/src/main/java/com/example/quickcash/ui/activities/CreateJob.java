@@ -37,9 +37,9 @@ public class CreateJob extends AppCompatActivity {
 
     private void CJgetUIElements(){
         CJLocationSpinner = (Spinner) findViewById(R.id.CJ_location_spinner);
-        CJTitle = (EditText) findViewById(R.id.CJ_addTitle);
-        CJDescription = (EditText) findViewById(R.id.CJ_addDescription);
-        CJWage = (EditText) findViewById(R.id.CJ_addWage);
+        CJTitle = (EditText) findViewById(R.id.CJ_task_title_enter);
+        CJDescription = (EditText) findViewById(R.id.CJ_task_description_enter);
+        CJWage = (EditText) findViewById(R.id.CJ_payment_enter);
         CJButtonToCreate = (Button) findViewById(R.id.CJ_create_button);
         CJButtonToMain = (ImageView) findViewById(R.id.CJ_to_main);
 
