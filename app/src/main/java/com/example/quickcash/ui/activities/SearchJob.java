@@ -21,6 +21,9 @@ public class SearchJob extends AppCompatActivity {
     private ImageView SJButtonToMain;
     private ArrayAdapter<String> SJAdapter;
 
+    String titlePreference;
+    String locationPreference;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,8 @@ public class SearchJob extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        saveSearchPreferences();
+                        //toJobPage();
                     }
                 }
         );
@@ -66,5 +70,17 @@ public class SearchJob extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), MainPage.class);
         startActivity(intent);
         finish();
+    }
+
+    private void saveSearchPreferences(){
+        titlePreference = SJTitle.toString();
+        locationPreference = SJLocationSpinner.getSelectedItem().toString();
+    }
+
+    public String getTitlePreference(){
+        return titlePreference;
+    }
+    public String getLocationPreference(){
+        return locationPreference;
     }
 }

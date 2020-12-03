@@ -85,6 +85,7 @@ public class JobDatabase {
         List<Job> jobMatches = new ArrayList<>();
 
         //loop through jobs retrieved from database
+        Log.d("TAG1", "size: " +jobsInDatabase.size());
         for (int i = 0; i < jobsInDatabase.size(); i++){
             Job currentJob = jobsInDatabase.get(i);
             String currentJobTitle = currentJob.getJobTitle();
@@ -92,6 +93,7 @@ public class JobDatabase {
 
             //if there's a matching in the title and location, add the job to the jobMatches ArrayList
             if (currentJobTitle.contains(titlePreference) && currentJobLocation.equals(locationPreference)){
+                Log.d("TAG1", "match: " + currentJob.getJobLocation());
                 jobMatches.add(currentJob);
             }
         }
