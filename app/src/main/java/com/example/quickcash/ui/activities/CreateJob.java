@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
+import com.example.quickcash.Job.LookingForWork;
 import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
 
@@ -100,13 +101,20 @@ public class CreateJob extends AppCompatActivity {
     }
 
     public void addToDatabase() {
+        String jType = CJJobtypeSpinner.getSelectedItem().toString();
         String jTitle = CJTitle.getText().toString();
         String jLocation = CJLocationSpinner.getSelectedItem().toString();
         String jDesc = CJDescription.getText().toString();
         double jWage = Double.parseDouble(CJWage.getText().toString());
 
-        Hiring job = new Hiring(jTitle, jLocation, jDesc, jWage);
-        jDB.addToDatabase(job);
+        if (jType.equals("Hiring")){
+            Hiring job = new Hiring(jTitle, jLocation, jDesc, jWage);
+            jDB.addToDatabase(job);
+        }
+        else{
+            LookingForWork job = new LookingForWork(jTitle, jLocation, jDesc, jWage);
+            jDB.addToDatabase(job);
+        }
     }
 
 
