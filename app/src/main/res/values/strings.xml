@@ -15,4 +15,14 @@
             <item>Other</item>
     </string-array>
 
+    <string-array name="default_preferences">
+        <item>Expert</item>
+        <item>Professional</item>
+        <item>Novice</item>
+        <item>Woodworking</item>
+        <item>Blacksmithing</item>
+        <item>Welding</item>
+        <item>Construction</item>
+    </string-array>
+
     </resources>

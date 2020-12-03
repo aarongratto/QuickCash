@@ -23,6 +23,8 @@ public abstract class Job{
     protected double jobWage;
     protected List<String> preferences;
 
+    public Job(){}
+
     /*
      * No need for another Job constructor as 'Hiring' and 'Looking for Work' objects
      * will be used instead

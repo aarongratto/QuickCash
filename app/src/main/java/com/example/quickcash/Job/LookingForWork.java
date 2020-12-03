@@ -8,6 +8,8 @@ package com.example.quickcash.Job;
  */
 public class LookingForWork extends Job {
 
+    public LookingForWork(){}
+
     public LookingForWork(String jobTitle, String jobLocation, String jobDescription, double jobWage){
         super(jobTitle, jobLocation, jobDescription, jobWage);
     }
