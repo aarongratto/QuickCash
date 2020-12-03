@@ -81,5 +81,22 @@ public class JobDatabase {
         return tempDatabaseList;
     }
 
+    public List<Job> getJobMatches(String titlePreference, String locationPreference){
+        List<Job> jobMatches = new ArrayList<>();
 
+        //loop through jobs retrieved from database
+        for (int i = 0; i < jobsInDatabase.size(); i++){
+            Job currentJob = jobsInDatabase.get(i);
+            String currentJobTitle = currentJob.getJobTitle();
+            String currentJobLocation = currentJob.getJobLocation();
+
+            //if there's a matching in the title and location, add the job to the jobMatches ArrayList
+            if (currentJobTitle.contains(titlePreference) && currentJobLocation.equals(locationPreference)){
+                jobMatches.add(currentJob);
+            }
+        }
+
+        //return the ArrayList of jobs that match the user's search preferences
+        return jobMatches;
+    }
 }
