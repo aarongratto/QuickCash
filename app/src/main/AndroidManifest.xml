@@ -42,6 +42,7 @@
         <activity android:name=".ui.activities.Registration" />
         <activity android:name=".ui.activities.MainPage" />
         <activity android:name=".ui.activities.CreateJob" />
+        <activity android:name=".ui.activities.SearchJob" />
     </application>
 
 </manifest>
