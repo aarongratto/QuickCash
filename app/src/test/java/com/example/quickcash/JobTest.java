@@ -5,6 +5,10 @@ import com.example.quickcash.Job.LookingForWork;
 import com.example.quickcash.validators.EmailValidator;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -67,4 +71,26 @@ public class JobTest {
         assertEquals("Looking for work", lookingWorkObject3.getJobType());
     }
 
+    // Test that the Hiring class will accept and return the correct preferences
+    @Test
+    public void testHiringPreference() {
+        String preference = "Woodworking";
+        String description = "Looking for a carpenter to build a chair for me. Materials provided.";
+
+        Hiring hiringJob = new Hiring("Carpenter", "Halifax", description, 50.0);
+        hiringJob.setPreference(preference);
+
+        assertEquals(preference, hiringJob.getPreference());
+    }
+
+    @Test
+    public void testLookingForWorkPreference() {
+        String preference = "Blacksmithing";
+        String description = "Novice blacksmith looking for work. $30/hr. Materials must be provided";
+
+        Hiring hiringJob = new Hiring("Novice blacksmith for hire", "Halifax", description, 30.0);
+        hiringJob.setPreference(preference);
+
+        assertEquals(preference, hiringJob.getPreference());
+    }
 }

@@ -1,5 +1,6 @@
 package com.example.quickcash.ui.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quickcash.Job.Hiring;
@@ -30,19 +32,28 @@ import java.util.List;
 
 
 
+import java.util.ArrayList;
+
 public class CreateJob extends AppCompatActivity {
     JobDatabase jDB;
     List<Job> jobsInDatabase = new ArrayList<>();
 
     private Spinner CJLocationSpinner;
     private Spinner CJJobtypeSpinner;
+    private Spinner CJPreferenceSpinner;
     private EditText CJTitle;
     private EditText CJDescription;
     private EditText CJWage;
     private Button CJButtonToCreate;
+    private Button CJButtonToPreferences;
     private ImageView CJButtonToMain;
     private ArrayAdapter<String> CJAdapterLocation;
     private ArrayAdapter<String> CJAdapterJobtype;
+    private ArrayAdapter<String> CJAdapterPreference;
+
+    String[] preferenceList;
+    boolean[] checkedList;
+    ArrayList<String> preferencesToAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +67,13 @@ public class CreateJob extends AppCompatActivity {
     private void CJgetUIElements(){
         CJLocationSpinner = (Spinner) findViewById(R.id.CJ_location_spinner);
         CJJobtypeSpinner = (Spinner) findViewById(R.id.CJ_jobtype_spinner);
+        CJPreferenceSpinner = findViewById(R.id.CJ_preference_spinner);
         CJTitle = (EditText) findViewById(R.id.CJ_task_title_enter);
         CJDescription = (EditText) findViewById(R.id.CJ_task_description_enter);
         CJWage = (EditText) findViewById(R.id.CJ_payment_enter);
         CJButtonToCreate = (Button) findViewById(R.id.CJ_create_button);
         CJButtonToMain = (ImageView) findViewById(R.id.CJ_to_main);
+
 
         CJAdapterLocation = new ArrayAdapter<String>(CreateJob.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.locations));
@@ -73,6 +86,12 @@ public class CreateJob extends AppCompatActivity {
         CJAdapterJobtype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         CJJobtypeSpinner.setAdapter(CJAdapterJobtype);
+
+        CJAdapterPreference = new ArrayAdapter<>(CreateJob.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.job_preferences));
+        CJAdapterPreference.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        CJPreferenceSpinner.setAdapter(CJAdapterPreference);
 
         CJButtonToMain.setOnClickListener(
                 new View.OnClickListener() {
@@ -109,12 +128,16 @@ public class CreateJob extends AppCompatActivity {
 
         if (jType.equals("Hiring")){
             Hiring job = new Hiring(jTitle, jLocation, jDesc, jWage);
+            job.setPreference(CJPreferenceSpinner.getSelectedItem().toString());
             jDB.addToDatabase(job);
         }
         else{
             LookingForWork job = new LookingForWork(jTitle, jLocation, jDesc, jWage);
+            job.setPreference(CJPreferenceSpinner.getSelectedItem().toString());
             jDB.addToDatabase(job);
         }
+
+
     }
 
 
