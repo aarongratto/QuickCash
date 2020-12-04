@@ -55,7 +55,7 @@ public class SearchJob extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        toMapPage();
                     }
                 }
         );
@@ -64,6 +64,12 @@ public class SearchJob extends AppCompatActivity {
 
     private void toMainPage(){
         Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void toMapPage(){
+        Intent intent = new Intent(getApplicationContext(), MapMain.class);
         startActivity(intent);
         finish();
     }
