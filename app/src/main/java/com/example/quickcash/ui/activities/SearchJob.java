@@ -59,7 +59,7 @@ public class SearchJob extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         saveSearchPreferences();
-                        //toJobPage();
+                        toMapPage();
                     }
                 }
         );
@@ -68,6 +68,12 @@ public class SearchJob extends AppCompatActivity {
 
     private void toMainPage(){
         Intent intent = new Intent(getApplicationContext(), MainPage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void toMapPage(){
+        Intent intent = new Intent(getApplicationContext(), MapMain.class);
         startActivity(intent);
         finish();
     }

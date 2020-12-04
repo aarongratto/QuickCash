@@ -9,6 +9,7 @@ Author: Junied Ahmed Jisan
 
     <string-array name="locations">
 
+
         <item>Select</item>
         <item>Halifax</item>
         <item>Pictou</item>
@@ -19,6 +20,7 @@ Author: Junied Ahmed Jisan
         <item>Cape Breton</item>
         <item>Other</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 
     <string-array name="job_type">
         <item>Select</item>
