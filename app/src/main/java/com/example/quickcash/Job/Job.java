@@ -20,8 +20,8 @@ public abstract class Job{
     protected String jobTitle;
     protected String jobLocation;
     protected String jobDescription;
+    protected String jobPreference;
     protected double jobWage;
-    protected List<String> preferences;
 
     public Job(){}
 
@@ -48,14 +48,9 @@ public abstract class Job{
     public String getJobLocation() { return jobLocation; }
     public String getJobDescription() { return jobDescription; }
     public double getJobWage() { return jobWage; }
-    public List<String> getPreferences() { return preferences; }
-    public void addPreferences(List<String> newPreferences) {
-        if (this.preferences == null) {
-            this.preferences = new ArrayList<>(newPreferences);
-        }
-        else {
-            this.preferences.addAll(newPreferences);
-        }
+    public String getPreference() { return jobPreference; }
+    public void setPreference(String preference) {
+        jobPreference = preference;
     }
 }
 

@@ -26,10 +26,9 @@ Author: Junied Ahmed Jisan
         <item>Looking for Job</item>
     </string-array>
 
-    <string-array name="default_preferences">
-        <item>Expert</item>
-        <item>Professional</item>
-        <item>Novice</item>
+    <string-array name="job_preferences">
+        <item>Select</item>
+        <item>Electronics</item>
         <item>Woodworking</item>
         <item>Blacksmithing</item>
         <item>Welding</item>
