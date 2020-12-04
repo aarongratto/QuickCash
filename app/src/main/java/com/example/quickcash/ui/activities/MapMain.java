@@ -92,7 +92,7 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
 
         placesList.add(new Places("Parliament", new LatLng(44.6427, -63.5839), 0));
         placesList.add(new Places("Nepean", new LatLng(44.6696, -63.5425), 0));
-        placesList.add(new Places("Kannata", new LatLng(44.6696, -63.5426), 0));
+        placesList.add(new Places("Kannata", new LatLng(44.6700, -63.5425), 0));
         placesList.add(new Places("Hurdman", new LatLng(44.4950, -63.7872), 0));
 
         context = MapMain.this;

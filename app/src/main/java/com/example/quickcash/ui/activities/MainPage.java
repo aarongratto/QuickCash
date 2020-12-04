@@ -13,6 +13,7 @@ import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
 import com.example.quickcash.R;
+import com.example.quickcash.payment.Payment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +29,8 @@ public class MainPage extends AppCompatActivity {
 
     private Button createJobButton;
     private Button searchJobButton;
-
+    // TODO: Remove temp button (ON XML FILE AS WELL) once Job class has a payment button
+    private Button jobPayButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,17 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 SJPage();
+            }
+        });
+
+        // TODO: Remove this temporary button
+        jobPayButton = findViewById(R.id.jobPayButton);
+        jobPayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent payIntent = new Intent(getApplicationContext(), Payment.class);
+                payIntent.putExtra("Amount", "30.30");
+                startActivity(payIntent);
             }
         });
     }

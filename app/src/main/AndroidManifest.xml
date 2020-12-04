@@ -34,6 +34,8 @@
             android:label="@string/title_activity_maps"></activity>
 
         <activity android:name=".ui.activities.MapMain" />
+        <activity android:name=".payment.PaymentReceipt"></activity>
+        <activity android:name=".payment.Payment" />
         <activity android:name=".ui.activities.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

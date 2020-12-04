@@ -40,6 +40,7 @@ dependencies {
     implementation 'androidx.test.espresso:espresso-idling-resource:3.3.0'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.15.3'
     testImplementation 'junit:junit:4.12'
     implementation 'org.mockito:mockito-core:1.+'
     implementation 'org.powermock:powermock:1.6.5'
