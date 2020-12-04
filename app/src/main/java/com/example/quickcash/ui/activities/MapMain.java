@@ -3,6 +3,7 @@ package com.example.quickcash.ui.activities;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,15 +42,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
 
-    //Getting the current location
-    //Calculating the distance
-
-    //Responsible for permission
     public static final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0;
     public static final String LOCATION_PERMISSION = android.Manifest.permission.ACCESS_FINE_LOCATION;
     public static final String LOCATION_PREF = "locationPref";
@@ -56,60 +56,62 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     Context context;
     Activity activity;
     Spinner spinner;
-    //Predefined Radius value
     String radius_array[] = {"5", "10", "15", "20", "25"};
     int radius = 5;
 
-    //Displaying Map and drawing circle
     private GoogleMap googleMap;
+    private Serializable escolas;
+    private ProgressDialog dialog;
     private Circle mCircle;
+    private Marker mMarker;
 
-    //Responsible for getting location
     LocationManager manager;
     LatLng currentLocation;
-    Location location;
 
-    //Making the list of lat/long
     ArrayList<Places> placesList = new ArrayList<>();
     PlacesAdapter adapter;
     ListView list;
 
+    //test inside
+    /*double mLatitude = 22.9809425;
+    double mLongitude = 72.6051794;*/
+    /*double mLatitude = 45.44837;
+    double mLongitude = -75.7170234;*/
+
+    //test outside
+   /* double mLatitude = 3.182180;
+    double mLongitude = 101.688777;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_map_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        placesList.add(new Places("Parliament", new LatLng(45.4208794, -75.6996991), 0));
-        placesList.add(new Places("Nepean", new LatLng(45.3349046, -75.7241006), 0));
-        placesList.add(new Places("Kannata", new LatLng(45.3088185, -75.8986835), 0));
-        placesList.add(new Places("Hurdman", new LatLng(45.4121506, -75.6656705), 0));
+        placesList.add(new Places("Parliament", new LatLng(44.6427, -63.5839), 0));
+        placesList.add(new Places("Nepean", new LatLng(44.6696, -63.5425), 0));
+        placesList.add(new Places("Kannata", new LatLng(44.6696, -63.5426), 0));
+        placesList.add(new Places("Hurdman", new LatLng(44.4950, -63.7872), 0));
 
+        context = MapMain.this;
+        activity = MapMain.this;
 
-        context = MapsActivity.this;
-        activity = MapsActivity.this;
-
-        //Populating the values in spinner
         spinner = findViewById(R.id.spinner);
         spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, radius_array));
 
-        //If version is greater than or equal to 23 we check permission below version don't require it
         if (Build.VERSION.SDK_INT >= 23) {
             checkLocationPermission(activity, context, LOCATION_PERMISSION, LOCATION_PREF);
         } else {
         }
 
-        //Initializing location service
         manager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-        //Getting Map Fragment
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -119,15 +121,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000,
+                5, listener);
 
-        //Request for location, time is in millisec and minDistance is the distance you want to update the location
-        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100,
-                0, listener);
-
-        //Notify when Map is load
         mapFragment.getMapAsync(this);
 
-        //Code responsible for selection of radius
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -149,7 +147,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         list.setAdapter(adapter);
     }
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -161,7 +158,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 new PermissionUtil.PermissionAskListener() {
                     @Override
                     public void onPermissionAsk() {
-                        ActivityCompat.requestPermissions(MapsActivity.this,
+                        ActivityCompat.requestPermissions(MapMain.this,
                                 new String[]{Permission},
                                 MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
                     }
@@ -172,7 +169,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                         showToast("Permission previously Denied.");
 
-                        ActivityCompat.requestPermissions(MapsActivity.this,
+                        ActivityCompat.requestPermissions(MapMain.this,
                                 new String[]{Permission},
                                 MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
                     }
@@ -253,7 +250,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap map) {
         googleMap = map;
 
+        // Add a marker in Sydney and move the camera
+//        LatLng sydney = new LatLng(22.9809425, 72.6051794);
+       /* googleMap.addMarker(new MarkerOptions().position(sydney));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
+        // Changing map type
+//        googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
+        // Showing / hiding your current location
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -282,14 +286,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
 
         if (currentLocation != null) {
-            //Move our current location
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 10));
             drawMarkerWithCircle(currentLocation);
         }
     }
 
     private void drawMarkerWithCircle(LatLng position) {
-        double radiusInMeters = radius * 1000.0;  // increase decrease this distance as per your requirements
+        double radiusInMeters = radius * 1000.0;  // increase decrease this distancce as per your requirements
         int strokeColor = 0xffff0000; //red outline
         int shadeColor = 0x44ff0000; //opaque red fill
 
@@ -300,22 +303,21 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .strokeColor(strokeColor)
                 .strokeWidth(8);
         mCircle = googleMap.addCircle(circleOptions);
+
+       /* MarkerOptions markerOptions = new MarkerOptions().position(position);
+        mMarker = googleMap.addMarker(markerOptions);*/
     }
 
     LocationListener listener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
 
-            //Getting the updated location
             currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
 
             Log.d("Location", "" + location.getLatitude() + "," + location.getLongitude());
 
             googleMap.clear();
             drawMarkerWithCircle(currentLocation);
-
-            //Apply your own Search/Filter logic
-
 
             for (int i = 0; i < placesList.size(); i++) {
                 float[] distance = new float[2];
@@ -326,14 +328,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 float distanceInMeter = Float.parseFloat(distance[0] + "");
                 if (distanceInMeter > radius) {
                     placesList.get(i).status = 0;
+//                    Toast.makeText(getBaseContext(), "You are Outside of the circle, Distance from center: " + distance[0] + " Radius: " + mCircle.getRadius(), Toast.LENGTH_LONG).show();
                 } else {
                     placesList.get(i).status = 1;
+//                    Toast.makeText(getBaseContext(), "Your are Inside the circle, Distance from center: " + distance[0] + " Radius: " + mCircle.getRadius(), Toast.LENGTH_LONG).show();
                 }
             }
 
             adapter.notifyDataSetChanged();
 
             if (googleMap != null) {
+               /* if (isFirstLaunch) {
+                    MarkerOptions mOptions = new MarkerOptions().position(currentLocation);
+                    myMarker = mMap.addMarker(mOptions);
+                    isFirstLaunch = false;
+                } else {
+                    myMarker.setPosition(currentLocation);
+                }*/
                 googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 10));
             }
         }
