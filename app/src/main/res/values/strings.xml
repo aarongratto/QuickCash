@@ -26,4 +26,13 @@ Author: Junied Ahmed Jisan
         <item>Looking for Job</item>
     </string-array>
 
-</resources>
+    <string-array name="job_preferences">
+        <item>Select</item>
+        <item>Electronics</item>
+        <item>Woodworking</item>
+        <item>Blacksmithing</item>
+        <item>Welding</item>
+        <item>Construction</item>
+    </string-array>
+
+    </resources>
