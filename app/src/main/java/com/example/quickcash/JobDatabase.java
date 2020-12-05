@@ -92,7 +92,7 @@ public class JobDatabase {
             String currentJobLocation = currentJob.getJobLocation();
 
             //if there's a matching in the title and location, add the job to the jobMatches ArrayList
-            if (currentJobTitle.contains(titlePreference) && currentJobLocation.equals(locationPreference)){
+            if (currentJobTitle.contains(titlePreference) || currentJobLocation.equals(locationPreference)){
                 Log.d("TAG1", "match: " + currentJob.getJobLocation());
                 jobMatches.add(currentJob);
             }
