@@ -48,7 +48,10 @@ public class JobDatabase {
     }
 
     public void addToDatabase(Job job) {
-        db.child(String.valueOf(System.currentTimeMillis())).setValue(job);
+        int newID = jobsInDatabase.size();
+        job.setJobID(newID);
+        Log.d("TAG1", "id: " +job.getJobID());
+        db.child(String.valueOf(newID)).setValue(job);
         Log.d("TAG1", "new job added: " +job.getJobTitle());
     }
 
@@ -60,6 +63,7 @@ public class JobDatabase {
         db.removeValue();
         Log.d("TAG1", "data wiped");
     }
+
 
     public List<Job> synchronizeDatabase(DataSnapshot snapshot){
         List<Job> tempDatabaseList = new ArrayList<>();

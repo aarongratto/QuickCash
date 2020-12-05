@@ -22,6 +22,7 @@ public abstract class Job{
     protected String jobDescription;
     protected String jobPreference;
     protected double jobWage;
+    protected int jobID;
 
     public Job(){}
 
@@ -52,5 +53,7 @@ public abstract class Job{
     public void setPreference(String preference) {
         jobPreference = preference;
     }
+    public int getJobID(){return jobID;}
+    public void setJobID(int jobID){this.jobID = jobID;}
 }
 
