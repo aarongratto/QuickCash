@@ -87,7 +87,7 @@ public class SearchJob extends AppCompatActivity {
     }
 
     private void saveSearchPreferences(){
-        titlePreference = SJTitle.toString();
+        titlePreference = SJTitle.getQuery().toString();
         locationPreference = SJLocationSpinner.getSelectedItem().toString();
         matches = jDB.getJobMatches(titlePreference, locationPreference);
     }
