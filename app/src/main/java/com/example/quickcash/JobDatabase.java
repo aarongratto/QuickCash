@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,9 +49,17 @@ public class JobDatabase {
     }
 
     public void addToDatabase(Job job) {
+        //attach user ID to the job object
+        String uID = FirebaseAuth.getInstance().getUid();
+        job.setCreator(uID);
+        Log.d("TAG1", "userID: " +uID);
+
+        //attach job ID number to the job object
         int newID = jobsInDatabase.size();
         job.setJobID(newID);
         Log.d("TAG1", "id: " +job.getJobID());
+
+        //add the job to the database
         db.child(String.valueOf(newID)).setValue(job);
         Log.d("TAG1", "new job added: " +job.getJobTitle());
     }

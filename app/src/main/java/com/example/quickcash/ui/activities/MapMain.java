@@ -425,7 +425,7 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
             if (position < matches.size()){
                 Job thisJob = matches.get(position);
                 holder.tvPlace.setText(thisJob.getJobTitle() +" - $" + thisJob.getJobWage() +"\n "
-                    +thisJob.getJobLocation());
+                        +thisJob.getJobType() +" - "  +thisJob.getJobLocation());
             }
             if (placesList.get(position).status == 1)
                 holder.imgStatus.setBackgroundResource(R.drawable.circle_green);
