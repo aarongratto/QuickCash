@@ -83,8 +83,8 @@ public class RegistrationTest {
         onView(withId(R.id.registrationRegisterButton))
                 .perform(click());
 
-        onView(withId(R.id.registrationStatusMessage))
-                .check(matches(withText("Registration success")));
+        onView(withId(R.id.jobCreateJobButton))
+                .check(matches(withText("Create Job")));
 
     }
 
