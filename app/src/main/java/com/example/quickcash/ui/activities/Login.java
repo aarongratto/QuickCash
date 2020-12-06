@@ -59,9 +59,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 login();
-                if (taskSuccess){
-                    openMainPage();
-                }
             }
         });
 
@@ -94,6 +91,7 @@ public class Login extends AppCompatActivity {
                         if (taskSuccess) {
                             labelStatusMessage.setText("Login success, as "
                                     + fbAuth.getCurrentUser().getEmail());
+                            openMainPage();
                         }
                         else {
                             labelStatusMessage.setText("Login failed");

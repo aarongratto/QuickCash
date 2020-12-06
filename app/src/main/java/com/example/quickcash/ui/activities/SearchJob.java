@@ -11,7 +11,12 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.quickcash.Job.Job;
+import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchJob extends AppCompatActivity {
 
@@ -21,12 +26,18 @@ public class SearchJob extends AppCompatActivity {
     private ImageView SJButtonToMain;
     private ArrayAdapter<String> SJAdapter;
 
+    private String titlePreference;
+    private String locationPreference;
+    private static List<Job> matches = new ArrayList<>();
+    JobDatabase jDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.job_search);
         SJgetUIElements();
+        jDB = new JobDatabase();
     }
 
 
@@ -55,6 +66,7 @@ public class SearchJob extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        saveSearchPreferences();
                         toMapPage();
                     }
                 }
@@ -73,4 +85,19 @@ public class SearchJob extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    private void saveSearchPreferences(){
+        titlePreference = SJTitle.getQuery().toString();
+        locationPreference = SJLocationSpinner.getSelectedItem().toString();
+        matches = jDB.getJobMatches(titlePreference, locationPreference);
+    }
+
+    public String getTitlePreference(){
+        return titlePreference;
+    }
+    public String getLocationPreference(){
+        return locationPreference;
+    }
+
+    public static List<Job> getMatches(){return matches;}
 }

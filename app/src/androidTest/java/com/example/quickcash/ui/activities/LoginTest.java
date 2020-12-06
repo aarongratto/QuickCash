@@ -58,8 +58,8 @@ public class LoginTest {
         onView(withId(R.id.loginLoginButton))
                 .perform(click());
 
-        onView(withId(R.id.loginStatusMessage))
-                .check(matches(withText("Login success, as default@quickcash.com")));
+        onView(withId(R.id.jobCreateJobButton))
+                .check(matches(withText("Create Job")));
     }
 
     @Test

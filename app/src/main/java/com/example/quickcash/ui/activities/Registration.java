@@ -58,9 +58,6 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 register();
-                if (taskSuccess){
-                    openMainPage();
-                }
             }
         });
         loginButton.setOnClickListener(new View.OnClickListener(){
@@ -83,6 +80,7 @@ public class Registration extends AppCompatActivity {
                             taskSuccess = task.isSuccessful();
                             if (task.isSuccessful()) {
                                 statusMessageLabel.setText("Registration success");
+                                openMainPage();
                             } else {
                                 statusMessageLabel.setText("Registration failed");
                             }

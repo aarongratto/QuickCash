@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,7 +49,18 @@ public class JobDatabase {
     }
 
     public void addToDatabase(Job job) {
-        db.child(String.valueOf(System.currentTimeMillis())).setValue(job);
+        //attach user ID to the job object
+        String uID = FirebaseAuth.getInstance().getUid();
+        job.setCreator(uID);
+        Log.d("TAG1", "userID: " +uID);
+
+        //attach job ID number to the job object
+        int newID = jobsInDatabase.size();
+        job.setJobID(newID);
+        Log.d("TAG1", "id: " +job.getJobID());
+
+        //add the job to the database
+        db.child(String.valueOf(newID)).setValue(job);
         Log.d("TAG1", "new job added: " +job.getJobTitle());
     }
 
@@ -60,6 +72,7 @@ public class JobDatabase {
         db.removeValue();
         Log.d("TAG1", "data wiped");
     }
+
 
     public List<Job> synchronizeDatabase(DataSnapshot snapshot){
         List<Job> tempDatabaseList = new ArrayList<>();
@@ -81,5 +94,24 @@ public class JobDatabase {
         return tempDatabaseList;
     }
 
+    public List<Job> getJobMatches(String titlePreference, String locationPreference){
+        List<Job> jobMatches = new ArrayList<>();
 
+        //loop through jobs retrieved from database
+        Log.d("TAG1", "size: " +jobsInDatabase.size());
+        for (int i = 0; i < jobsInDatabase.size(); i++){
+            Job currentJob = jobsInDatabase.get(i);
+            String currentJobTitle = currentJob.getJobTitle();
+            String currentJobLocation = currentJob.getJobLocation();
+
+            //if there's a matching in the title and location, add the job to the jobMatches ArrayList
+            if (currentJobTitle.contains(titlePreference) || currentJobLocation.equals(locationPreference)){
+                Log.d("TAG1", "match: " + currentJob.getJobLocation());
+                jobMatches.add(currentJob);
+            }
+        }
+
+        //return the ArrayList of jobs that match the user's search preferences
+        return jobMatches;
+    }
 }

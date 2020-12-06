@@ -32,6 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
+import com.example.quickcash.Job.Job;
 import com.example.quickcash.R;
 import com.example.quickcash.map.PermissionUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -45,6 +46,7 @@ import com.google.android.gms.maps.model.Marker;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -71,6 +73,8 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
     PlacesAdapter adapter;
     ListView list;
 
+    List<Job> matches;
+
     //test inside
     /*double mLatitude = 22.9809425;
     double mLongitude = 72.6051794;*/
@@ -88,6 +92,8 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        matches = SearchJob.getMatches();
+        Log.d("TAG1", "# of matches: " +matches.size());
 
         placesList.add(new Places("Parliament", new LatLng(44.6427, -63.5839), 0));
         placesList.add(new Places("Nepean", new LatLng(44.6696, -63.5425), 0));
@@ -414,7 +420,12 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
             }
 
             ViewHolder holder = (ViewHolder) rowView.getTag();
-            holder.tvPlace.setText(placesList.get(position).place_name);
+            //holder.tvPlace.setText(placesList.get(position).place_name);
+            if (position < matches.size()){
+                Job thisJob = matches.get(position);
+                holder.tvPlace.setText(thisJob.getJobTitle() +" - $" + thisJob.getJobWage() +"\n "
+                        +thisJob.getJobType() +" - "  +thisJob.getJobLocation());
+            }
             if (placesList.get(position).status == 1)
                 holder.imgStatus.setBackgroundResource(R.drawable.circle_green);
             else
