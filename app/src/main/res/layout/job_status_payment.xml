@@ -65,7 +65,7 @@ Author: Junied Ahmed Jisan
         android:layout_width="329dp"
         android:layout_height="31dp"
         android:layout_marginTop="20dp"
-        android:text="Jobs in progress and payment"
+        android:text="Job status and payment"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold|italic"
