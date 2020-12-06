@@ -33,13 +33,10 @@ public class MainPage extends AppCompatActivity {
 
     private Button createJobButton;
     private Button searchJobButton;
-<<<<<<< HEAD
     private Button logoutButton;
-=======
     private Button jobStatusButton;
->>>>>>> 71188cc008fea5251125b647fc009c0b82dfeff6
     // TODO: Remove temp button (ON XML FILE AS WELL) once Job class has a payment button
-    private Button jobPayButton;
+    // private Button jobPayButton;
 
     JobDatabase jDB;
     private static List<Job> jobsInProgress = new ArrayList<>();
@@ -77,9 +74,9 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-
+/*
         // TODO: Remove this temporary button
-        /*jobPayButton = findViewById(R.id.jobPayButton);
+        jobPayButton = findViewById(R.id.jobPayButton);
         jobPayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,8 +84,9 @@ public class MainPage extends AppCompatActivity {
                 payIntent.putExtra("Amount", "30.30");
                 startActivity(payIntent);
             }
-<<<<<<< HEAD
         });
+
+ */
 
         logoutButton = (Button) findViewById(R.id.logoutButton);
         logoutButton.setOnClickListener(new View.OnClickListener(){
@@ -99,11 +97,6 @@ public class MainPage extends AppCompatActivity {
                 goToLoginPage();
             }
         });
-
-
-=======
-        });*/
->>>>>>> 71188cc008fea5251125b647fc009c0b82dfeff6
     }
 
 
@@ -117,7 +110,6 @@ public class MainPage extends AppCompatActivity {
         startActivity(search);
     }
 
-<<<<<<< HEAD
     public void goToLoginPage(){
         Intent search = new Intent(getApplicationContext(), Login.class);
         startActivity(search);
@@ -128,13 +120,10 @@ public class MainPage extends AppCompatActivity {
     public void deleteLoginInfo(){
         deleteSharedPreferences("pref_data");
     }
-
-=======
     public void goToPaymentStatusPage(){
         Intent paymentStatus = new Intent(getApplicationContext(), PaymentStatus.class);
         startActivity(paymentStatus);
     }
 
     public static List<Job> getJobsInProgress(){return jobsInProgress;}
->>>>>>> 71188cc008fea5251125b647fc009c0b82dfeff6
 }
