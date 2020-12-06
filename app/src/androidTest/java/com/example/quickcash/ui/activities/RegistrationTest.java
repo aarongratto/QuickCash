@@ -36,7 +36,6 @@ public class RegistrationTest {
 
     private IdlingResource activityIdlingResource;
 
-
     // Setup
 
     @Rule

@@ -1,6 +1,7 @@
 package com.example.quickcash.ui.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
+import com.example.quickcash.payment.Payment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,9 @@ public class PaymentStatus extends AppCompatActivity {
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent payIntent = new Intent(getApplicationContext(), Payment.class);
+                payIntent.putExtra("Amount", "30.30");
+                startActivity(payIntent);
             }
         });
         listInProgress = findViewById(R.id.listView3);
