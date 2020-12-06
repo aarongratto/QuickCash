@@ -29,6 +29,7 @@ public class MainPage extends AppCompatActivity {
 
     private Button createJobButton;
     private Button searchJobButton;
+    private Button jobStatusButton;
     // TODO: Remove temp button (ON XML FILE AS WELL) once Job class has a payment button
     private Button jobPayButton;
 
@@ -55,9 +56,17 @@ public class MainPage extends AppCompatActivity {
                 SJPage();
             }
         });
+        jobStatusButton = (Button) findViewById(R.id.jobCreateJobButton3);
+        jobStatusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToPaymentStatusPage();
+            }
+        });
+
 
         // TODO: Remove this temporary button
-        jobPayButton = findViewById(R.id.jobPayButton);
+        /*jobPayButton = findViewById(R.id.jobPayButton);
         jobPayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +74,7 @@ public class MainPage extends AppCompatActivity {
                 payIntent.putExtra("Amount", "30.30");
                 startActivity(payIntent);
             }
-        });
+        });*/
     }
 
 
@@ -77,6 +86,11 @@ public class MainPage extends AppCompatActivity {
     public void SJPage() {
         Intent search = new Intent(getApplicationContext(), SearchJob.class);
         startActivity(search);
+    }
+
+    public void goToPaymentStatusPage(){
+        Intent paymentStatus = new Intent(getApplicationContext(), PaymentStatus.class);
+        startActivity(paymentStatus);
     }
 
 }
