@@ -1,5 +1,4 @@
 package com.example.quickcash.ui.activities;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -76,6 +75,7 @@ public class MapMain extends AppCompatActivity implements OnMapReadyCallback {
 
     List<Job> matches;
 
+    //test inside
     //test inside
     /*double mLatitude = 22.9809425;
     double mLongitude = 72.6051794;*/

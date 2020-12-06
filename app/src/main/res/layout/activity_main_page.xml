@@ -14,6 +14,22 @@ Author: Junied Ahmed Jisan
     tools:context=".ui.activities.MainPage">
 
 
+    <Button
+        android:id="@+id/jobCreateJobButton3"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:background="@drawable/custom_button3"
+        android:text="Job Status/Payment"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchJobButton"
+        app:layout_constraintVertical_bias="0.157" />
+
     <ImageView
         android:id="@+id/jobIconImage"
         android:layout_width="185dp"
@@ -61,7 +77,7 @@ Author: Junied Ahmed Jisan
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <Button
         android:id="@+id/SearchJobButton"
@@ -78,21 +94,7 @@ Author: Junied Ahmed Jisan
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/jobPayButton"
-        android:layout_width="250dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/custom_button3"
-        android:textAllCaps="false"
-        android:textColor="#ffff"
-        android:textSize="15dp"
-        android:text="Pay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SearchJobButton" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -106,7 +108,7 @@ Author: Junied Ahmed Jisan
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobPayButton" />
+        app:layout_constraintTop_toBottomOf="@+id/jobCreateJobButton3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
