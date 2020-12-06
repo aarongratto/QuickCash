@@ -15,8 +15,7 @@ Author: Junied Ahmed Jisan, Patrick Strongman
         android:id="@+id/jobAppNameLabel4"
         android:layout_width="257dp"
         android:layout_height="23dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="472dp"
+        android:layout_marginTop="16dp"
         android:forceDarkAllowed="true"
         android:text="Quick Cash"
         android:textAlignment="center"
@@ -26,23 +25,20 @@ Author: Junied Ahmed Jisan, Patrick Strongman
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobIconImage"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toBottomOf="@+id/jobIconImage2" />
 
     <ImageView
         android:id="@+id/jobIconImage2"
         android:layout_width="185dp"
         android:layout_height="200dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="logo"
         android:src="@drawable/money"
-        app:layout_constraintBottom_toTopOf="@+id/receiptTitleText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/receiptMainPageButton"
@@ -53,23 +49,19 @@ Author: Junied Ahmed Jisan, Patrick Strongman
         android:text="Back to main page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel4"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/receiptTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="16dp"
         android:text="Receipt"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/receiptMainPageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel4" />
 
     <LinearLayout
         android:layout_width="wrap_content"

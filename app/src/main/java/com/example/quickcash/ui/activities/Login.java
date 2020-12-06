@@ -132,6 +132,11 @@ public class Login extends AppCompatActivity {
     }
 
     protected void login() {
+        if (textEmail.getText().toString().isEmpty()|| textPassword.getText().toString().isEmpty()) {
+            labelStatusMessage.setText("Please enter both an email and password");
+            return;
+        }
+
         idlingResource.increment();
 
         fbAuth.signInWithEmailAndPassword(textEmail.getText().toString(),
@@ -146,8 +151,7 @@ public class Login extends AppCompatActivity {
 
                             getUserData();
                             openMainPage();
-                        }
-                        else {
+                        } else {
                             labelStatusMessage.setText("Login failed");
                         }
                         idlingResource.decrement();

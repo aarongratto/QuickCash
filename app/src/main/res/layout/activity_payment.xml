@@ -61,7 +61,7 @@ Author: Junied Ahmed Jisan, Patrick Strongman
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Enter total amount:"
+        android:text="Payment amount:"
         android:textColor="@color/design_default_color_background"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
