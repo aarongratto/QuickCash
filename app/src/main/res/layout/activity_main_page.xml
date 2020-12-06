@@ -14,6 +14,23 @@ Author: Junied Ahmed Jisan
     tools:context=".ui.activities.MainPage">
 
 
+    <Button
+        android:id="@+id/jobCreateJobButton3"
+        android:layout_width="250dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/custom_button3"
+        android:text="Job Status/Payment"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
+        app:layout_constraintVertical_bias="0.467" />
+
     <ImageView
         android:id="@+id/jobIconImage"
         android:layout_width="185dp"
