@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.quickcash.Job.Hiring;
 import com.example.quickcash.Job.Job;
 import com.example.quickcash.Job.LookingForWork;
+import com.example.quickcash.JobDatabase;
 import com.example.quickcash.R;
 import com.example.quickcash.payment.Payment;
 import com.google.firebase.database.DataSnapshot;
@@ -33,12 +34,16 @@ public class MainPage extends AppCompatActivity {
     // TODO: Remove temp button (ON XML FILE AS WELL) once Job class has a payment button
     private Button jobPayButton;
 
+    JobDatabase jDB;
+    private static List<Job> jobsInProgress = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         getUIElements();
 
+        jDB = new JobDatabase();
     }
 
     private void getUIElements() {
@@ -60,6 +65,7 @@ public class MainPage extends AppCompatActivity {
         jobStatusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                jobsInProgress = jDB.getJobsInDatabase();
                 goToPaymentStatusPage();
             }
         });
@@ -93,4 +99,5 @@ public class MainPage extends AppCompatActivity {
         startActivity(paymentStatus);
     }
 
+    public static List<Job> getJobsInProgress(){return jobsInProgress;}
 }
