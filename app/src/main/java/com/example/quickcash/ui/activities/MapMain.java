@@ -1,5 +1,4 @@
 package com.example.quickcash.ui.activities;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;

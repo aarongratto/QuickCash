@@ -7,6 +7,26 @@
     android:background="@drawable/gradient"
     tools:context=".payment.Payment">
 
+    <TextView
+        android:id="@+id/jobAppNameLabel2"
+        android:layout_width="255dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="296dp"
+        android:forceDarkAllowed="true"
+        android:text="Quick Cash"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/paymentPaymentText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/paymentPaymentButton"
         android:layout_width="108dp"
@@ -35,12 +55,11 @@
         android:id="@+id/paymentPaymentText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Enter total pay:"
+        android:layout_marginTop="80dp"
+        android:text="Enter total amount:"
         android:textColor="@color/design_default_color_background"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentIconImage" />
 
