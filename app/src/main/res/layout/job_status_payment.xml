@@ -14,43 +14,93 @@ Author: Junied Ahmed Jisan
     android:background="@drawable/gradient"
     tools:context=".ui.activities.SearchJob">
 
-    <TextView
-        android:id="@+id/jobSearchjobTitle"
-        android:layout_width="182dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:text="Search for a job"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
+    <ListView
+        android:id="@+id/listView2"
+        android:layout_width="324dp"
+        android:layout_height="105dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/jobSearchjobTitle"
+        app:layout_constraintVertical_bias="0.596"></ListView>
+
+    <ListView
+        android:id="@+id/listView3"
+        android:layout_width="324dp"
+        android:layout_height="105dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobSearchjobTitle"
+        app:layout_constraintVertical_bias="0.13"></ListView>
 
     <TextView
-        android:id="@+id/jobAddLocationLabel2"
-        android:layout_width="217dp"
+        android:id="@+id/jobAddLocationLabel"
+        android:layout_width="218dp"
         android:layout_height="23dp"
-        android:layout_marginTop="16dp"
         android:forceDarkAllowed="true"
-        android:text="Location:"
+        android:text="Make a payment:"
+        android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textIsSelectable="false"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         android:visibility="visible"
-        app:layout_constraintStart_toStartOf="@+id/jobSearchBar"
-        app:layout_constraintTop_toBottomOf="@+id/jobSearchBar" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView2"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/jobSearchjobTitle"
+        android:layout_width="329dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="20dp"
+        android:text="Job status and payment"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel"
+        app:layout_constraintVertical_bias="0.015" />
+
+    <TextView
+        android:id="@+id/jobAddLocationLabel2"
+        android:layout_width="217dp"
+        android:layout_height="23dp"
+        android:forceDarkAllowed="true"
+        android:text="Jobs completed:"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobTitleLabel"
+        app:layout_constraintVertical_bias="0.332" />
 
     <TextView
         android:id="@+id/jobTitleLabel"
         android:layout_width="217dp"
         android:layout_height="23dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:forceDarkAllowed="true"
-        android:text="Job Title:"
+        android:text="Jobs in progress:"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textIsSelectable="false"
@@ -91,45 +141,20 @@ Author: Junied Ahmed Jisan
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/SearchJobButton"
-        android:layout_width="138dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="64dp"
+        android:id="@+id/jobPayButton"
+        android:layout_width="139dp"
+        android:layout_height="45dp"
         android:background="@drawable/custom_button"
-        android:text="Search Job"
+        android:text="Pay"
         android:textAllCaps="false"
         android:textColor="#ffff"
         android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobSearchLocationSpinner" />
-
-    <SearchView
-        android:id="@+id/jobSearchBar"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="#ffff"
-        android:iconifiedByDefault="false"
-        android:inputType="textPersonName"
-        android:queryHint="Search jobs"
-        android:textColor="#f000"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobTitleLabel" />
-
-    <Spinner
-        android:id="@+id/jobSearchLocationSpinner"
-        android:layout_width="325dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="#ffff"
-        android:entries="@array/locations"
-        android:spinnerMode="dialog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jobAddLocationLabel2" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAddLocationLabel"
+        app:layout_constraintVertical_bias="0.187" />
 
     <ImageView
         android:id="@+id/jobbackMain"

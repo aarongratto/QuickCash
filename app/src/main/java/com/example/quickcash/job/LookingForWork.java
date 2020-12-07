@@ -1,4 +1,4 @@
-package com.example.quickcash.Job;
+package com.example.quickcash.job;
 
 /**
  * Author: Aaron Gratto

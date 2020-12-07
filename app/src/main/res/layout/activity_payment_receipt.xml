@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Author: Junied Ahmed Jisan, Patrick Strongman
+* Date: 2020-11-28
+* Payment Receipts available here-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".payment.PaymentReceipt">
+
+    <TextView
+        android:id="@+id/jobAppNameLabel4"
+        android:layout_width="257dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="16dp"
+        android:forceDarkAllowed="true"
+        android:text="Quick Cash"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#ffff"
+        android:textIsSelectable="false"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jobIconImage2" />
+
+    <ImageView
+        android:id="@+id/jobIconImage2"
+        android:layout_width="185dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="logo"
+        android:src="@drawable/money"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/receiptMainPageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/custom_button"
         android:text="Back to main page"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,13 +55,13 @@
         android:id="@+id/receiptTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Receipt"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/jobAppNameLabel4" />
 
     <LinearLayout
         android:layout_width="wrap_content"

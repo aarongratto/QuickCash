@@ -9,10 +9,9 @@ Author: Junied Ahmed Jisan
 
     <string-array name="locations">
 
-
         <item>Select</item>
         <item>Halifax</item>
-        <item>Pictou</item>
+        <item>Dartmouth</item>
         <item>Kings</item>
         <item>Lunenburg</item>
         <item>Queens</item>

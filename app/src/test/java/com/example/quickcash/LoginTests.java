@@ -76,39 +76,4 @@ public class LoginTests {
         assertFalse("Not a valid special character", v3.specialCheck());
         assertTrue("Password passes specialCheck", v4.specialCheck());
     }
-
-    //tests that user is already logged in
-    @Test
-    public void alreadyLoggedInTest(){
-        Employer e1 = new Employer();
-        Employer e2 = new Employer();
-        Employee e3 = new Employee();
-        Employee e4 = new Employee();
-
-        e1.login("Aaron", "pass");
-        e3.login("Patrick", "password");
-
-        assertTrue("Already logged in", e1.isLoggedIn());
-        assertFalse("Not logged in", e2.isLoggedIn());
-        assertTrue("Already logged in", e3.isLoggedIn());
-        assertFalse("Not logged in", e4.isLoggedIn());
-    }
-
-    //tests that user has made too many login attempts (i.e., 3)
-    @Test
-    public void tooManyLoginsTest(){
-        int loginAttempts = 0;
-
-        Employer e1 = new Employer();
-
-        while(loginAttempts < 3){
-            e1.login("", ""); //pass bad login credentials
-            if (e1.isLoggedIn()){
-                break;
-            }
-            loginAttempts++;
-        }
-
-        assertEquals("Max login attempts reached", 3, loginAttempts);
-    }
 }

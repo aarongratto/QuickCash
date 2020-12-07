@@ -1,12 +1,9 @@
 package com.example.quickcash;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
-import com.example.quickcash.Job.Hiring;
-import com.example.quickcash.Job.Job;
-import com.example.quickcash.Job.LookingForWork;
-import com.example.quickcash.ui.activities.MainPage;
+import com.example.quickcash.job.Hiring;
+import com.example.quickcash.job.Job;
+import com.example.quickcash.job.LookingForWork;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,7 +12,6 @@ import com.google.firebase.database.ValueEventListener;
 
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;

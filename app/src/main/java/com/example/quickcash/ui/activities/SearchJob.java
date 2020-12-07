@@ -11,8 +11,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quickcash.Job.Job;
-import com.example.quickcash.JobDatabase;
+import com.example.quickcash.job.Job;
+import com.example.quickcash.job.JobDatabase;
 import com.example.quickcash.R;
 
 import java.util.ArrayList;
