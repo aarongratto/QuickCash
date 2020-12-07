@@ -1,4 +1,4 @@
-package com.example.quickcash.Config;
+package com.example.quickcash.config;
 
 /**
  * Author: Nihir Pareshkumar Shah (from payment integration tutorial on Brightspace)

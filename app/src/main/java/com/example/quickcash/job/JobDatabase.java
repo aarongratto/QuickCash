@@ -1,12 +1,12 @@
-package com.example.quickcash;
+package com.example.quickcash.job;
 
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.example.quickcash.Job.Hiring;
-import com.example.quickcash.Job.Job;
-import com.example.quickcash.Job.LookingForWork;
+import com.example.quickcash.job.Hiring;
+import com.example.quickcash.job.Job;
+import com.example.quickcash.job.LookingForWork;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

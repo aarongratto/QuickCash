@@ -1,13 +1,9 @@
 package com.example.quickcash;
 
-import com.example.quickcash.Job.Hiring;
-import com.example.quickcash.Job.LookingForWork;
-import com.example.quickcash.validators.EmailValidator;
+import com.example.quickcash.job.Hiring;
+import com.example.quickcash.job.LookingForWork;
 
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 

@@ -17,6 +17,7 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -162,6 +163,7 @@ public class RegistrationTest {
     private void enterUsername(String username) {
         onView(withId(R.id.registrationUsernameText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(username));
         closeSoftKeyboard();
     }
@@ -169,6 +171,7 @@ public class RegistrationTest {
     private void enterEmail(String email) {
         onView(withId(R.id.registrationEmailText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(email));
         closeSoftKeyboard();
     }
@@ -176,6 +179,7 @@ public class RegistrationTest {
     private void enterPassword(String password) {
         onView(withId(R.id.registrationPasswordText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(password));
         closeSoftKeyboard();
     }
@@ -183,6 +187,7 @@ public class RegistrationTest {
     private void enterConfirmPassword(String password) {
         onView(withId(R.id.registrationConfirmPasswordText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(password));
         closeSoftKeyboard();
     }

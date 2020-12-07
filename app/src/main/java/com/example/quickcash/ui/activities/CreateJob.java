@@ -1,6 +1,5 @@
 package com.example.quickcash.ui.activities;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,13 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.quickcash.Job.Hiring;
-import com.example.quickcash.Job.Job;
-import com.example.quickcash.Job.LookingForWork;
-import com.example.quickcash.JobDatabase;
+import com.example.quickcash.job.Hiring;
+import com.example.quickcash.job.Job;
+import com.example.quickcash.job.LookingForWork;
+import com.example.quickcash.job.JobDatabase;
 import com.example.quickcash.R;
 
 import java.util.ArrayList;
@@ -29,10 +27,6 @@ import java.util.List;
  *
  * Create Job class initiates creation using UI elements
  */
-
-
-
-import java.util.ArrayList;
 
 public class CreateJob extends AppCompatActivity {
     JobDatabase jDB;

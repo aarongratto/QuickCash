@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -70,6 +71,7 @@ public class LogoutTest {
     public void typeEmail(String emailAddress) {
         onView(withId(R.id.loginEmailText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(emailAddress));
         closeSoftKeyboard();
     }
@@ -77,6 +79,7 @@ public class LogoutTest {
     public void typePassword(String password) {
         onView(withId(R.id.loginPasswordText))
                 .perform(click())
+                .perform(clearText())
                 .perform(typeText(password));
         closeSoftKeyboard();
     }

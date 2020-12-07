@@ -1,7 +1,4 @@
-package com.example.quickcash.Job;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.example.quickcash.job;
 
 /**
  * Author: Aaron Gratto
